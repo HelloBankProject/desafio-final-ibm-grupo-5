@@ -1,4 +1,7 @@
 package br.com.hellobank.api.dao;
 
-public interface ClienteDAO {
+import br.com.hellobank.api.model.Cliente;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ClienteDAO extends CrudRepository<Cliente, Integer> {
 }

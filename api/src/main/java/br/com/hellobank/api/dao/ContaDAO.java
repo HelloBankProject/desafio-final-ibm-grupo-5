@@ -1,4 +1,7 @@
 package br.com.hellobank.api.dao;
 
-public interface ContaDAO {
+import br.com.hellobank.api.model.Conta;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ContaDAO extends CrudRepository<Conta, Integer> {
 }
