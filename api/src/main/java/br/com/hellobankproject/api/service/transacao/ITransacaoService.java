@@ -1,6 +1,6 @@
-package br.com.hellobank.api.service.transacao;
+package br.com.hellobankproject.api.service.transacao;
 
-import br.com.hellobank.api.model.Transacao;
+import br.com.hellobankproject.api.model.Transacao;
 
 import java.util.ArrayList;
 

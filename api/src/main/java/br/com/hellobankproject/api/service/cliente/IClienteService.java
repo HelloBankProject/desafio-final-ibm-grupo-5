@@ -1,6 +1,6 @@
-package br.com.hellobank.api.service.cliente;
+package br.com.hellobankproject.api.service.cliente;
 
-import br.com.hellobank.api.model.Cliente;
+import br.com.hellobankproject.api.model.Cliente;
 
 import java.util.ArrayList;
 

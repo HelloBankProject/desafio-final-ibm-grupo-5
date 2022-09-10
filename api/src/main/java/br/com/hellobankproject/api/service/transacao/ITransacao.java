@@ -1,22 +1,20 @@
-package br.com.hellobank.api.service.transacao;
+package br.com.hellobankproject.api.service.transacao;
 
-import br.com.hellobank.api.dao.TransacaoDAO;
-import br.com.hellobank.api.model.Conta;
-import br.com.hellobank.api.model.Transacao;
+import br.com.hellobankproject.api.dao.TransacaoDAO;
+import br.com.hellobankproject.api.model.Transacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
 @Service
-public class ITransacao implements ITransacaoService{
-
+public class ITransacao implements ITransacaoService {
     @Autowired
     private TransacaoDAO dao;
 
     @Override
     public Transacao criarNovoTransacao(Transacao novo) {
-        if (novo.getValor() != null && novo.getModo() != null && novo.getData() != null && novo.getConta() != null) {
+        if (novo.getValor() != null && novo.getModo() != null && novo.getData() != null && novo.getRecebedor() != null && novo.getFornecedor() != null) {
             return dao.save(novo);
         }
         return null;
@@ -24,7 +22,7 @@ public class ITransacao implements ITransacaoService{
 
     @Override
     public Transacao atualizarDadosTransacao(Transacao dados) {
-        if (dados.getId() != null && dados.getValor() != null && dados.getModo() != null && dados.getData() != null && dados.getConta() != null) {
+        if (dados.getId() != null && dados.getValor() != null && dados.getModo() != null && dados.getData() != null && dados.getRecebedor() != null && dados.getFornecedor() != null) {
             return dao.save(dados);
         }
         return null;

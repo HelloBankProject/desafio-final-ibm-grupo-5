@@ -1,4 +1,4 @@
-package br.com.hellobank.api;
+package br.com.hellobankproject.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

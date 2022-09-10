@@ -39,7 +39,7 @@ create table Transacao (
 
 -- INSERÇÃO DE DADOS
 
-select * from Cliente;
+select * from cliente;
 insert into Cliente (cpf,nome,email,senha,endereco,estado,cidade,bairro,complemento,telefone) values
 ("174.774.077-29","Juan Carvalho Silva de Lima","juanc.s.delima@gmail.com","juaN01md","Rua José Saly, 185","Rio de Janeiro","São Gonçalo","Porto Novo","Sobrado","21989447785"),
 ("029.999.037-07", "Fabio da Silva Almeida","fabios.almeida@gmail.com","faBio88jew","Travessia Maria Rita","Pernambuco","Recife","Ipojuca",null,"06783332424"),
@@ -48,7 +48,7 @@ insert into Cliente (cpf,nome,email,senha,endereco,estado,cidade,bairro,compleme
 ("066.666.234-66","Thomas Cavalcante Sotero","thomaScaval135@gmail.com","ttfweCavalfq45.Jdsa","Rua Graciliano Ramos, B5","Paraná","Cascavel","Alto Alegre","Edifício Recanto Verde", "55976433123");
 
 
-select * from Conta;
+select * from conta;
 insert into Conta (tipo,saldo,credito,id_cliente,id_outro_cliente) values
 ("corrente",23450.35,450,1,null),("poupanca",10000.00,null,2,null),("corrente",3445.20,7000.0,2,null),("salario","1875.90",null,1,null),
 ("conjunta",500000.00,null,3,5),("poupanca",560.90,null,3,null),("corrente",1000,700,3,null),("corrente",5320,7080,4,null),("salario",230.00,null,4,null),("corrente",236300.98,10,5,null),

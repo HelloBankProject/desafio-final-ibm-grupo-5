@@ -1,4 +1,4 @@
-package br.com.hellobank.api.model;
+package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -6,9 +6,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "transacao")
+@Table(name = "Transacao")
 public class Transacao {
-
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,18 +22,30 @@ public class Transacao {
     @Column(name = "modo_envio", length = 50, nullable = false)
     private String modo;
 
+
+    public Conta getRecebedor() {
+        return recebedor;
+    }
+
+    public void setRecebedor(Conta recebedor) {
+        this.recebedor = recebedor;
+    }
+
+    public Conta getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(Conta fornecedor) {
+        this.fornecedor = fornecedor;
+    }
+
     @ManyToOne
-    @JoinColumn(name = "id_recebedor")
-    //@JsonIgnoreProperties("listaTransacao")
-    private Conta conta;
+    @JoinColumn(name = "id_recebedor", nullable = false)
+    private Conta recebedor;
 
-    public Conta getConta() {
-        return conta;
-    }
-
-    public void setConta(Conta conta) {
-        this.conta = conta;
-    }
+    @ManyToOne
+    @JoinColumn(name = "id_fornecedor", nullable = false)
+    private Conta fornecedor;
 
     public Integer getId() {
         return id;
@@ -67,4 +78,6 @@ public class Transacao {
     public void setModo(String modo) {
         this.modo = modo;
     }
+
+
 }

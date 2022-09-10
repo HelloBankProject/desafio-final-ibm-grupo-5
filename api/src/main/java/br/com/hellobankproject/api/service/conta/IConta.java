@@ -1,7 +1,7 @@
-package br.com.hellobank.api.service.conta;
+package br.com.hellobankproject.api.service.conta;
 
-import br.com.hellobank.api.dao.ContaDAO;
-import br.com.hellobank.api.model.Conta;
+import br.com.hellobankproject.api.dao.ContaDAO;
+import br.com.hellobankproject.api.model.Conta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +9,11 @@ import java.util.ArrayList;
 
 @Service
 public class IConta implements IContaService {
-
     @Autowired
     private ContaDAO dao;
     @Override
     public Conta criarNovoConta(Conta novo) {
-        if (novo.getTipo() != null && novo.getSaldo() != null && novo.getCliente() != null) {
+        if (novo.getTipo() != null && novo.getSaldo() != null) {
             return dao.save(novo);
         }
         return null;
@@ -22,7 +21,7 @@ public class IConta implements IContaService {
 
     @Override
     public Conta atualizarDadosConta(Conta dados) {
-        if (dados.getId() != null && dados.getTipo() != null && dados.getSaldo() != null && dados.getCliente() != null) {
+        if (dados.getId() != null && dados.getTipo() != null && dados.getSaldo() != null) {
             return dao.save(dados);
         }
         return null;

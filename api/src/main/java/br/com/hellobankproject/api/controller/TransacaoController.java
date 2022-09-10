@@ -1,7 +1,7 @@
-package br.com.hellobank.api.controller;
+package br.com.hellobankproject.api.controller;
 
-import br.com.hellobank.api.model.Transacao;
-import br.com.hellobank.api.service.transacao.ITransacaoService;
+import br.com.hellobankproject.api.model.Transacao;
+import br.com.hellobankproject.api.service.transacao.ITransacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

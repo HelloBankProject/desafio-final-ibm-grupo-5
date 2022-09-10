@@ -1,14 +1,12 @@
-package br.com.hellobank.api.model;
+package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "conta")
+@Table(name = "Conta")
 public class Conta {
-
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,23 +21,17 @@ public class Conta {
     @Column(name = "credito", nullable = true)
     private Double credito;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "id_cliente")
-    //@JsonIgnoreProperties("listaConta")
+    @JsonIgnoreProperties("contas")
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "conta", cascade = CascadeType.ALL)
-    //@JsonIgnoreProperties("conta")
-    private List<Transacao> listaTransacao;
 
+    @ManyToOne()
+    @JoinColumn(name = "id_outro_cliente")
+    @JsonIgnoreProperties("contas")
+    private Cliente outroCliente;
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
 
     public Integer getId() {
         return id;
@@ -73,12 +65,19 @@ public class Conta {
         this.credito = credito;
     }
 
-    public List<Transacao> getListaTransacao() {
-        return listaTransacao;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setListaTransacao(List<Transacao> listaTransacao) {
-        this.listaTransacao = listaTransacao;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
+    public Cliente getOutroCliente() {
+        return outroCliente;
+    }
+
+    public void setOutroCliente(Cliente outroCliente) {
+        this.outroCliente = outroCliente;
+    }
 }
