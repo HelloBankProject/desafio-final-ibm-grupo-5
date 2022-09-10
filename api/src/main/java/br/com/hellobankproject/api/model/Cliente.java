@@ -1,9 +1,6 @@
 package br.com.hellobankproject.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "Cliente")
@@ -43,25 +40,27 @@ public class Cliente {
     @Column(name = "telefone", length = 11, nullable = false)
     private String telefone;
 
-    /* OBS.: Não está conseguindo puxar a lista de contas
-    *   Entretanto, não acredito que seja necessário, mas se alguém conseguir
-    *   vai ser melhor...Assista o vídeo do Isidro [Semana 4]
-    *   Aula 5. Relações 1:N - Inserção
-    *   Nesse vídeo ele ensina a lógica, mas de alguma forma não estou conseguindo
-
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"cliente", "outroCliente"})
-    private List<Conta> contas;
-
-
-    public List<Conta> getContas() {
-        return contas;
-    }
-
-    public void setContas(List<Conta> contas) {
-        this.contas = contas;
-    }
-    */
+    /*
+     * OBS.: Não está conseguindo puxar a lista de contas
+     * Entretanto, não acredito que seja necessário, mas se alguém conseguir
+     * vai ser melhor...Assista o vídeo do Isidro [Semana 4]
+     * Aula 5. Relações 1:N - Inserção
+     * Nesse vídeo ele ensina a lógica, mas de alguma forma não estou conseguindo
+     * 
+     * @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+     * 
+     * @JsonIgnoreProperties({"cliente", "outroCliente"})
+     * private List<Conta> contas;
+     * 
+     * 
+     * public List<Conta> getContas() {
+     * return contas;
+     * }
+     * 
+     * public void setContas(List<Conta> contas) {
+     * this.contas = contas;
+     * }
+     */
 
     public Integer getId() {
         return id;

@@ -1,7 +1,5 @@
 package br.com.hellobankproject.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -21,7 +19,6 @@ public class Transacao {
 
     @Column(name = "modo_envio", length = 50, nullable = false)
     private String modo;
-
 
     public Conta getRecebedor() {
         return recebedor;
@@ -78,6 +75,5 @@ public class Transacao {
     public void setModo(String modo) {
         this.modo = modo;
     }
-
 
 }
