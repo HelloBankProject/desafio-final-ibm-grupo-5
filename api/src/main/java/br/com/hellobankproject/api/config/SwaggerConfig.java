@@ -20,19 +20,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
-                .build()
-                .apiInfo(metaInfo());
+                .build();
     }
 
-    private ApiInfo metaInfo() {
-        return new ApiInfo(
-                "HelloBank API Rest",
-                "API Rest para gerenciar as transações da HelloBank.",
-                "1.0.0",
-                "Terms of Services",
-                null,
-                null,
-                null,
-                null);
-    }
 }
