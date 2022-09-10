@@ -1,9 +1,15 @@
 package br.com.hellobankproject.api.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 @Entity
-@Table(name = "Cliente")
+@Table(name = "cliente")
+@JsonSerialize
 public class Cliente {
     @Column(name = "id")
     @Id
@@ -46,21 +52,31 @@ public class Cliente {
      * vai ser melhor...Assista o vídeo do Isidro [Semana 4]
      * Aula 5. Relações 1:N - Inserção
      * Nesse vídeo ele ensina a lógica, mas de alguma forma não estou conseguindo
-     * 
-     * @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-     * 
-     * @JsonIgnoreProperties({"cliente", "outroCliente"})
-     * private List<Conta> contas;
-     * 
-     * 
-     * public List<Conta> getContas() {
-     * return contas;
-     * }
-     * 
-     * public void setContas(List<Conta> contas) {
-     * this.contas = contas;
-     * }
      */
+
+    @OneToMany(mappedBy = "primeiroTitular", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnoreProperties({ "primeiroTitular", "segundoTitular" })
+    private List<Conta> listaPrimeiroTitular;
+
+    @OneToMany(mappedBy = "segundoTitular", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnoreProperties({ "primeiroTitular", "segundoTitular" })
+    private List<Conta> listaSegundoTitular;
+
+    public List<Conta> getListaSegundoTitular() {
+        return listaSegundoTitular;
+    }
+
+    public void setListaSegundoTitular(List<Conta> listaSegundoTitular) {
+        this.listaSegundoTitular = listaSegundoTitular;
+    }
+
+    public List<Conta> getListaPrimeiroTitular() {
+        return listaPrimeiroTitular;
+    }
+
+    public void setListaPrimeiroTitular(List<Conta> listaPrimeiroTitular) {
+        this.listaPrimeiroTitular = listaPrimeiroTitular;
+    }
 
     public Integer getId() {
         return id;
