@@ -3,6 +3,11 @@ package br.com.hellobankproject.api.model;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -11,39 +16,53 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @Table(name = "cliente")
 @JsonSerialize
 public class Cliente {
+
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "cpf", length = 14, nullable = false)
+    @CPF(message = "Campo Invalido")
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "cpf", length = 14)
     private String cpf;
 
-    @Column(name = "nome", length = 50, nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "nome", length = 50)
     private String nome;
 
-    @Column(name = "email", length = 80, nullable = false)
+    @Email(message = "Campo Invalido")
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "email", length = 80)
     private String email;
 
-    @Column(name = "senha", length = 20, nullable = false)
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$", message = "Senha Invalida")
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "senha", length = 20)
     private String senha;
 
-    @Column(name = "endereco", length = 50, nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "endereco", length = 50)
     private String endereco;
 
-    @Column(name = "estado", length = 50, nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "estado", length = 50)
     private String estado;
 
-    @Column(name = "cidade", length = 80, nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "cidade", length = 80)
     private String cidade;
 
-    @Column(name = "bairro", length = 80, nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "bairro", length = 80)
     private String bairro;
 
-    @Column(name = "complemento", length = 50, nullable = true)
+    @Column(name = "complemento", length = 5)
     private String complemento;
 
-    @Column(name = "telefone", length = 11, nullable = false)
+    @Pattern(regexp = "^[0-9]+$", message = "telefone invalido")
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "telefone", length = 11)
     private String telefone;
 
     /*

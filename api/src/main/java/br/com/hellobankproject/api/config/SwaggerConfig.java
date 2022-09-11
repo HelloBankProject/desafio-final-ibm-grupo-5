@@ -22,9 +22,3 @@ public class SwaggerConfig {
                 .build();
     }
 }
-<<<<<<< HEAD
-
-}
-=======
-}
->>>>>>> feat(detalhamento-json-cliente)

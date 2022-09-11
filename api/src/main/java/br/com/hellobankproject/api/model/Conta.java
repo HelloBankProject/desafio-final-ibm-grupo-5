@@ -1,9 +1,8 @@
 package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "conta")
@@ -14,13 +13,15 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "tipo", length = 50, nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "tipo", length = 50)
     private String tipo;
 
-    @Column(name = "saldo", nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "saldo")
     private Double saldo;
 
-    @Column(name = "credito", nullable = true)
+    @Column(name = "credito")
     private Double credito;
 
     @ManyToOne

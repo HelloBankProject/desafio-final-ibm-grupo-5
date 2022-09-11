@@ -1,6 +1,8 @@
 package br.com.hellobankproject.api.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
 import java.util.Date;
 
 @Entity
@@ -11,13 +13,16 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "valor", nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "valor")
     private Double valor;
 
-    @Column(name = "data_transacao", nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "data_transacao")
     private Date data;
 
-    @Column(name = "modo_envio", length = 50, nullable = false)
+    @NotBlank(message = "Campo nao informado")
+    @Column(name = "modo_envio", length = 50)
     private String modo;
 
     public Conta getRecebedor() {

@@ -6,10 +6,17 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.validation.Valid;
 
 @RestController
 @Api(tags = { "Conta" }, value = "conta", description = "Operações relacionadas a conta do cliente")
@@ -36,7 +43,7 @@ public class ContaController {
 
     @ApiOperation(value = "Cadastrar uma conta", nickname = "postConta")
     @PostMapping("/contas")
-    public ResponseEntity<Conta> incluirNovo(@RequestBody Conta novo) {
+    public ResponseEntity<Conta> incluirNovo(@RequestBody @Valid Conta novo) {
         Conta res = service.criarNovoConta(novo);
         if (res != null) {
             return ResponseEntity.ok(res);
@@ -46,7 +53,7 @@ public class ContaController {
 
     @ApiOperation(value = "Atualizar conta pelo ID", nickname = "putConta")
     @PutMapping("/contas")
-    public ResponseEntity<Conta> alterar(@RequestBody Conta dados) {
+    public ResponseEntity<Conta> alterar(@RequestBody @Valid Conta dados) {
         Conta res = service.atualizarDadosConta(dados);
         if (res != null) {
             return ResponseEntity.ok(res);
@@ -59,5 +66,20 @@ public class ContaController {
     public ResponseEntity<Conta> excluir(@PathVariable Integer id) {
         service.excluirConta(id);
         return ResponseEntity.ok(null);
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public Map<String, String> handleValidationException(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+
+        });
+        return errors;
+
     }
 }
