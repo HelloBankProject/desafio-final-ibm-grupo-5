@@ -1,0 +1,25 @@
+.detalhamentoContainer {
+    background-color: white;
+    height: 240px;
+    width: 35%;
+    margin: 45px 0 0 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(219, 219, 219);
+}
+
+.clienteTitulo {
+    font-family: 'Inter', sans-serif;
+    color: rgb(86, 86, 86);
+    padding-left: 35px;
+}
+
+.detalhamentoClienteContainer {
+    font-family: 'Inter', sans-serif;
+    color: rgb(86, 86, 86);
+    display: flex;
+    padding: 15px;
+}
+
+.subInfo {
+    margin: 0 20px;
+}
