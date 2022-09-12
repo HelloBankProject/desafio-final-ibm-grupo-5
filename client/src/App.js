@@ -1,11 +1,9 @@
-import Home from './pages/Home'
-import CadastroCliente from './pages/CadastroCliente'
-import CadastroConta from './pages/CadastroConta'
-import DetalhamentoCliente from './pages/DetalhamentoCliente'
-import DetalhamentoConta from './pages/DetalhamentoConta'
+import Home from './pages/Home/Home'
+import Cliente from './pages/Cliente/Cliente'
+import Conta from './pages/Conta/Conta'
 
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Navegate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
@@ -13,10 +11,8 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/cadastro-cliente' element={<CadastroCliente />} />
-          <Route path='/cadastro-conta' element={<CadastroConta />} />
-          <Route path='/detalhamento-cliente' element={<DetalhamentoCliente />} />
-          <Route path='/detalhamento-conta' element={<DetalhamentoConta />} />
+          <Route path='/detalhamento-cliente' element={<Cliente />} />
+          <Route path='/detalhamento-conta' element={<Conta />} />
         </Routes>
       </Router>
     </>

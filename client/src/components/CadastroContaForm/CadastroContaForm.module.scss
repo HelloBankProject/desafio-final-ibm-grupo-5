@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(249, 249, 249);
+}
+
+.tituloContainer {
+    font-family: 'Inter', sans-serif;
+    color: rgb(86, 86, 86);
+    margin-left: 15px;
+}
+
+.cadastroFormContainer {
+    margin: 45px 15px 25px 15px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgb(219, 219, 219);
+    width: 35%;
+    padding: 0 0 10px 0;
+    position: absolute;
+    left: 0;
+
+}
+
+.cadastroForm {
+    margin: auto;
+    text-align: center;
+}
+
+.cadastrarButton {
+    margin: 5px;
+    margin-left: 40px;
+    text-align: center;
+    position: relative;
+    left: 10px;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.finalTextField {
+    width: 100%;
+}
