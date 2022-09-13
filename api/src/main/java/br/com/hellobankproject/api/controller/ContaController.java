@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.List;
 import javax.validation.Valid;
 
 @RestController
@@ -24,7 +24,7 @@ public class ContaController {
 
     @ApiOperation(value = "Listar todas as contas", nickname = "getConta")
     @GetMapping("/contas")
-    public ArrayList<Conta> recuperarTodos() {
+    public List<Conta> recuperarTodos() {
         return service.buscarTodasContas();
     }
 

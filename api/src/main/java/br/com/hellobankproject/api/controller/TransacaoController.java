@@ -19,10 +19,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+<<<<<<<HEAD
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Valid;
+import javax.validation.Valid;=======
+import java.util.List;>>>>>>>ce91f81(fix dependencias)
 
 @RestController
 @Api(tags = { "Transacão" }, value = "trasancao", description = "Operações relacionadas a Transacões")
