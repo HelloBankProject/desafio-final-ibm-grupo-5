@@ -5,19 +5,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.support.WebExchangeBindException;
 
 @ControllerAdvice
 public class Exceptionhandle {
 
     @ResponseBody
-    @ExceptionHandler(WebExchangeBindException.class)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
-    public ValidationExceptions error(WebExchangeBindException e) {
+    public ValidationExceptions error(MethodArgumentNotValidException e) {
 
         Map<String, String> erros = new HashMap<>();
         e.getBindingResult().getFieldErrors().forEach(error -> erros.put(error.getField(), error.getDefaultMessage()));

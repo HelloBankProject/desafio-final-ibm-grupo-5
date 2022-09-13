@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @Api(tags = { "Transacão" }, value = "trasancao", description = "Operações relacionadas a Transacões")
@@ -19,7 +19,7 @@ public class TransacaoController {
 
     @ApiOperation(value = "Listar todas as transacões", nickname = "getTransacões")
     @GetMapping("/transacoes")
-    public ArrayList<Transacao> recuperarTodos() {
+    public List<Transacao> recuperarTodos() {
         return service.buscarTodosTransacao();
     }
 
