@@ -48,7 +48,10 @@ function CadastroContaForm() {
               label="Tipo"
             />
             </div>
-            <Button className={styles.cadastrarButton} variant="contained">Cadastrar</Button>
+            <div className={styles.buttonContainer} >
+              <Button className={styles.cadastrarButton} variant="contained">Cadastrar</Button>
+            </div>
+            
           </Box>
         </div>
         

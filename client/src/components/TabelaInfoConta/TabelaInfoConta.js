@@ -17,15 +17,49 @@ const rows = [
 
 function TabelaInfoConta() {
   return (
-    <div className={styles.tabelaContainer} style={{ height: 465, width: '60%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
-    </div>
+    <>
+
+      <table class={`table ${styles.tabelaContainer}`}>
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Saldo</th>
+      <th scope="col">Credito</th>
+      <th scope="col">Primeiro Titular</th>
+      <th scope="col">Segundo Titular</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>corrente</td>
+      <td>1500.00</td>
+      <td>500.90</td>
+      <td>Juan Carvalho</td>
+      <td>Ana Claudia</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>corrente</td>
+      <td>1500.00</td>
+      <td>500.90</td>
+      <td>Juan Carvalho</td>
+      <td>Ana Claudia</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>corrente</td>
+      <td>1500.00</td>
+      <td>500.90</td>
+      <td>Juan Carvalho</td>
+      <td>Ana Claudia</td>
+    </tr>
+  </tbody>
+</table>
+    </>
+
   );
 }
 
