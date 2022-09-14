@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 @Api(tags = { "Transacão" }, value = "trasancao", description = "Operações relacionadas a Transacões")
 public class TransacaoController {
     @Autowired

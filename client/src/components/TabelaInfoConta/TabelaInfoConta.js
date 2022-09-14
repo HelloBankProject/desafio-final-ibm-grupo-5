@@ -1,21 +1,27 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import axios from 'axios';
 import styles from './TabelaInfoConta.module.scss';
-
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'tipo', headerName: 'Tipo', width: 130 },
-  { field: 'saldo', headerName: 'Saldo', type: 'number',width: 130 },
-  { field: 'credito', headerName: 'Crédito', type: 'number', width: 130},
-  { field: 'id_cliente', headerName: 'Primeiro Titular', width: 130},
-  { field: 'id_outro_cliente', headerName: 'Segundo Titular', width: 130},
-];
-
-const rows = [
-  { id: 1, tipo: 'corrente', saldo: 1500.00, credito: 500.90, id_cliente: 1, id_outro_cliente: 'null'},
-];
+import { Link, useParams } from 'react-router-dom';
 
 function TabelaInfoConta() {
+  const [conta, setConta] = React.useState([])
+  const {id} = useParams()
+
+  React.useEffect(() => {
+    loadCliente()
+  },[])
+
+  const loadConta = async () => {
+    const resultado = await axios.get("http://localhost:8080/contas")
+    setConta(resultado.data)
+  }
+
+  const deleteConta = async (id) => {
+    await axios.delete(`http://localhost:8080/contas/${id}`)
+    loadConta()
+  }
+
   return (
     <>
 
@@ -32,30 +38,27 @@ function TabelaInfoConta() {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>corrente</td>
-      <td>1500.00</td>
-      <td>500.90</td>
-      <td>Juan Carvalho</td>
-      <td>Ana Claudia</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>corrente</td>
-      <td>1500.00</td>
-      <td>500.90</td>
-      <td>Juan Carvalho</td>
-      <td>Ana Claudia</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>corrente</td>
-      <td>1500.00</td>
-      <td>500.90</td>
-      <td>Juan Carvalho</td>
-      <td>Ana Claudia</td>
-    </tr>
+    {
+      conta.map((conta, index) => {
+        <tr>
+          <th scope="row" key={index}>{conta.id}</th>
+          <td>{conta.tipo}</td>
+          <td>{conta.saldo}</td>
+          <td>{conta.credito}</td>
+          <td>{conta.primeiroTitular.id}</td>
+          <td>{conta.segundoTitular.id}</td>
+          <td>
+          <button className='btn btn-primary mx-2'>Vizualizar</button>
+          <Link className='btn btn-outline-primary mx-2'
+          to={`/editconta/${conta.id}`}
+          >Atualizar</Link>
+          <Link className='btn btn-danger mx-2'
+          onClick={() => deleteCliente(conta.id)}
+          >Deletar</Link>
+        </td>
+        </tr>
+      })
+    }
   </tbody>
 </table>
     </>

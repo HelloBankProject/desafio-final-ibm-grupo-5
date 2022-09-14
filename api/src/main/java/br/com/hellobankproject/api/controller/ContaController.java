@@ -13,6 +13,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 @Api(tags = { "Conta" }, value = "conta", description = "Operações relacionadas a conta do cliente")
 public class ContaController {
 
