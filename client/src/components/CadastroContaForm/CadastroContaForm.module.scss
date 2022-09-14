@@ -5,19 +5,19 @@ body {
 .tituloContainer {
     font-family: 'Inter', sans-serif;
     color: rgb(86, 86, 86);
-    margin-left: 15px;
+    margin: auto;
+    text-align: center;
+    padding: 20px 10px 10px 10px;
 }
 
 .cadastroFormContainer {
-    margin: 45px 15px 25px 15px;
+    margin: auto;
+    margin-top: 45px;
     border-radius: 5px;
     background-color: white;
     border: 1px solid rgb(219, 219, 219);
-    width: 35%;
+    width: 40%;
     padding: 0 0 10px 0;
-    position: absolute;
-    left: 0;
-
 }
 
 .cadastroForm {
@@ -25,16 +25,14 @@ body {
     text-align: center;
 }
 
-.cadastrarButton {
-    margin: 5px;
-    margin-left: 40px;
-    text-align: center;
+.buttonContainer {
+    margin: auto;
     position: relative;
-    left: 10px;
+    left: 15px;
+    margin: 25px 0 0 0;
+}
+.cadastrarButton {
+    text-align: center;
     width: 95%;
     border-radius: 10px;
-}
-
-.finalTextField {
-    width: 100%;
 }

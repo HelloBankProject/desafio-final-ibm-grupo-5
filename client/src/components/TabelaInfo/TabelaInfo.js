@@ -1,49 +1,72 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import axios from 'axios';
 import styles from './TabelaInfo.module.scss';
+import { Link, useParams } from 'react-router-dom';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'nome', headerName: 'Nome', width: 130 },
-  { field: 'cpf', headerName: 'CPF', width: 130 },
-  { field: 'email', headerName: 'Email', width: 130},
-  { field: 'senha', headerName: 'Senha', type: 'password', width: 130},
-  { field: 'endereco', headerName: 'Endereço', width: 130 },
-  { field: 'estado', headerName: 'Estado', width: 130 },
-  { field: 'cidade', headerName: 'Cidade', width: 130 },
-  { field: 'bairro', headerName: 'Bairro', width: 130 },
-  { field: 'complemento', headerName: 'Complemento', width: 130 },
-  { field: 'telefone', headerName: 'Telefone', width: 130 },
-  /*
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-  },
-  */
-];
-
-const rows = [
-  { id: 1, nome: 'Juan Carvalho', cpf: '174.774.077-29', email: 'juanc.s.delima@gmail.com', senha: 'feveva3aer', endereco: 'Rua José Saly, 185', estado: 'Rio de Janeiro', cidade: 'São Gonçalo', bairro: 'Porto Novo', complemento: 'Sobrado', telefone: '21989447785' },
-
-  //{ id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
 
 function TabelaInfo() {
+
+  const [cliente, setCliente] = React.useState([])
+  const {id} = useParams()
+
+  React.useEffect(() => {
+    loadCliente()
+  },[])
+
+  const loadCliente = async () => {
+    const resultado = await axios.get("http://localhost:8080/clientes")
+    setCliente(resultado.data)
+  }
+
+  const deleteCliente = async (id) => {
+    await axios.delete(`http://localhost:8080/clientes/${id}`)
+    loadCliente()
+  }
+
   return (
-    <div className={styles.tabelaContainer} style={{ height: 465, width: '60%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
-    </div>
+    <>
+      
+    <table class={`table ${styles.tabelaContainer}`}>
+  <thead>
+    <tr className={styles.tabelaTitulos}>
+      <th scope="col">Código</th>
+      <th scope="col">Nome</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Email</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      cliente.map((cliente,index) => (
+        <tr>
+        <th scope="row" key={index}>{cliente.id}</th>
+        <td>{cliente.nome}</td>
+        <td>{cliente.cpf}</td>
+        <td>{cliente.email}</td>
+        <td>{cliente.endereco}</td>
+        <td>{cliente.estado}</td>
+        <td>{cliente.telefone}</td>
+        <td>
+          <button className='btn btn-primary mx-2'>Vizualizar</button>
+          <Link className='btn btn-outline-primary mx-2'
+          to={`/editcliente/${cliente.id}`}
+          >Atualizar</Link>
+          <Link className='btn btn-danger mx-2'
+          onClick={() => deleteCliente(cliente.id)}
+          >Deletar</Link>
+        </td>
+    </tr>
+      ))
+    }
+    
+  </tbody>
+</table>
+    </>
+    
   );
 }
 

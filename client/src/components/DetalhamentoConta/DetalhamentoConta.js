@@ -5,7 +5,7 @@ function DetalhamentoConta() {
     return (
         <>
             <div className={styles.detalhamentoContainer}>
-                <h3 className={styles.clienteTitulo}>Área da Conta</h3>
+                <h3 className={styles.clienteTitulo}>Detalhamento da Conta</h3>
                 <hr />
                 <div className={styles.detalhamentoClienteContainer}>
                     <div className={styles.subInfo}>

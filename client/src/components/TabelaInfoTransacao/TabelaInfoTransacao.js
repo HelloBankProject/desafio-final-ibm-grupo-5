@@ -1,31 +1,51 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
 import styles from './TabelaInfoTransacao.module.scss';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'valor', headerName: 'Valor', type: 'number', width: 130 },
-  { field: 'data_transacao', headerName: 'Data', type: 'number',width: 130 },
-  { field: 'modo_envio', headerName: 'Modo de Envio', width: 130},
-  { field: 'id_recebedor', headerName: 'Recebedor', width: 130},
-  { field: 'id_fornecedor', headerName: 'Fornecedor', width: 130},
-];
-
-const rows = [
-  { id: 1, valor: 2500.00, data_transacao: '12/09/2022', modo_envio: 'pix', id_recebedor: 1, id_fornecedor: 5},
-];
 
 function TabelaInfoTransacao() {
   return (
-    <div className={styles.tabelaContainer} style={{ height: 465, width: '60%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
-    </div>
+    <>
+      <table class={`table ${styles.tabelaContainer}`}>
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Data Transação</th>
+      <th scope="col">Modo de Envio</th>
+      <th scope="col">Recebedor</th>
+      <th scope="col">Fornecedor</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>2500.00</td>
+      <td>12/09/2022</td>
+      <td>pix</td>
+      <td>Juan Carvalho</td>
+      <td>Ana Claudia</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>2500.00</td>
+      <td>12/09/2022</td>
+      <td>pix</td>
+      <td>Juan Carvalho</td>
+      <td>Ana Claudia</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>2500.00</td>
+      <td>12/09/2022</td>
+      <td>pix</td>
+      <td>Juan Carvalho</td>
+      <td>Ana Claudia</td>
+    </tr>
+  </tbody>
+</table>
+    </>
+  
   );
 }
 

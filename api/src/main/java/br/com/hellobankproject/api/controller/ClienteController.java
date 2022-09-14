@@ -13,6 +13,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 @Api(tags = { "Cliente" }, value = "clientes", description = "Operações relacionadas a clientes")
 public class ClienteController {
     @Autowired
