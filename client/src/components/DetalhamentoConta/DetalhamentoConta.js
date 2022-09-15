@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import axios from 'axios'
 import styles from './DetalhamentoConta.module.scss';
 import { useParams } from 'react-router-dom';
@@ -35,8 +35,16 @@ function DetalhamentoConta() {
                         <p>Crédito: {conta.credito}</p>
                     </div>
                     <div className={styles.subInfo}>
-                        <p>Primeiro Títular: {conta.primeiroTitular.id}</p>
-                        <p>Segundo Títular: {conta.segundoTitular.id}</p>
+                        <p>Primeiro Títular: {`${conta.primeiroTitular.nome}`}</p>
+                        <div>
+                        {
+                            conta.segundoTitular === null ? 
+                                <p>Segundo Títular: null</p>
+                            :
+                                <p>Segundo Títular: {`${conta.segundoTitular.nome}`}</p>
+                            
+                        }
+                        </div>
                     </div>
                 </div>
                 

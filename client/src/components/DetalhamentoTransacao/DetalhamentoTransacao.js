@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import axios from 'axios'
 import styles from './DetalhamentoTransacao.module.scss';
 import { useParams } from 'react-router-dom';
@@ -31,12 +31,12 @@ function DetalhamentoTransacao() {
                 <div className={styles.detalhamentoClienteContainer}>
                     <div className={styles.subInfo}>
                         <p>Modo de Envio: {transacao.modo}</p>
-                        <p>Recebedor: {transacao.recebedor.nome}</p>
+                        <p>Recebedor: {transacao.recebedor.id}</p>
                         <p>Valor: {transacao.valor}</p>
                     </div>
                     <div className={styles.subInfo}>
                         <p>Data: {transacao.data}</p>
-                        <p>Fornecedor: {transacao.fornecedor.nome}</p>
+                        <p>Fornecedor: {transacao.fornecedor.id}</p>
                     </div>
                 </div>
                 

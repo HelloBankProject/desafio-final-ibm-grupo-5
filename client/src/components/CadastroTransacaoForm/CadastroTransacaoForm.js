@@ -1,16 +1,15 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import styles from './CadastroTransacaoForm.module.scss';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function CadastroTransacaoForm() {
 
   let navigate = useNavigate()
 
-  const [transacao, setTransacao] = React.useState({
+  const [transacao, setTransacao] = useState({
       valor:"",
       data:"",
       modo:"",
@@ -93,7 +92,10 @@ function CadastroTransacaoForm() {
             
             </div>
             <div className={styles.buttonContainer} >
-              <Button className={styles.cadastrarButton} variant="contained" type='submit'>Cadastrar</Button>
+              <button className={`btn btn-outline-primary ${styles.cadastrarButton}`} variant="contained" type='submit'>Cadastrar</button>
+              <Link className="btn btn-outline-danger mx-2" to="/">
+                Cancel
+              </Link>
             </div>
           </Box>
           </form>

@@ -1,16 +1,15 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import axios from 'axios';
 import styles from './CadastroClienteForm.module.scss';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function CadastroClienteForm() {
 
   let navigate = useNavigate()
 
-  const [cliente, setCliente] = React.useState({
+  const [cliente, setCliente] = useState({
       nome:"",
       cpf:"",
       email:"",
@@ -136,7 +135,10 @@ function CadastroClienteForm() {
               />
             </div>
             <div className={styles.buttonContainer}>
-              <Button className={styles.cadastrarButton} variant="contained" type='submit' >Cadastrar</Button>
+              <button className={`btn btn-outline-primary ${styles.cadastrarButton}`} variant="contained" type='submit' >Cadastrar</button>
+              <Link className="btn btn-outline-danger mx-2" to="/">
+                Cancel
+              </Link>
             </div>
             
           </Box>
