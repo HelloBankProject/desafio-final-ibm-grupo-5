@@ -1,8 +1,8 @@
 package br.com.hellobankproject.api.service.cliente;
 
 import br.com.hellobankproject.api.dao.ClienteDAO;
-import br.com.hellobankproject.api.exception.ClienteAlreadyCreatedException;
-import br.com.hellobankproject.api.exception.ClienteNotFoundException;
+import br.com.hellobankproject.api.exception.AlreadyCreatedException;
+import br.com.hellobankproject.api.exception.NotFoundException;
 import br.com.hellobankproject.api.model.Cliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +14,23 @@ import java.util.List;
 public class ICliente implements IClienteService {
     @Autowired
     private ClienteDAO dao;
-    private static final String msg = "Cliente nao cadastrado";
+    private static final String MSG = "Cliente nao cadastrado";
 
     @Override
     public Cliente criarNovoCliente(Cliente novo) {
         if (dao.findByCpf(novo.getCpf()).isPresent()) {
-            throw new ClienteAlreadyCreatedException("Cliente ja cadastrado");
+            throw new AlreadyCreatedException("Cliente ja cadastrado");
         }
         return dao.save(novo);
     }
 
     @Override
     public Cliente atualizarDadosCliente(Cliente dados) {
-        return dao.findById(dados.getId()).orElseThrow(() -> new ClienteNotFoundException(msg));
+        if (dao.existsById(dados.getId())) {
+            return dao.save(dados);
+        } else {
+            throw new NotFoundException(MSG);
+        }
     }
 
     @Override
@@ -36,13 +40,13 @@ public class ICliente implements IClienteService {
 
     @Override
     public Cliente buscarPeloIdCliente(Integer id) {
-        return dao.findById(id).orElseThrow(() -> new ClienteNotFoundException(msg));
+        return dao.findById(id).orElseThrow(() -> new NotFoundException(MSG));
     }
 
     @Override
     public void excluirCliente(Integer id) {
         if (!dao.findById(id).isPresent()) {
-            throw new ClienteNotFoundException(msg);
+            throw new NotFoundException(MSG);
         } else {
             dao.deleteById(id);
         }

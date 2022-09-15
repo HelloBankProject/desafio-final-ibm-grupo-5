@@ -24,18 +24,14 @@ public class ContaController {
 
     @ApiOperation(value = "Listar todas as contas", nickname = "getConta")
     @GetMapping("/contas")
-    public List<Conta> recuperarTodos() {
-        return service.buscarTodasContas();
+    public ResponseEntity<List<Conta>> recuperarTodos() {
+        return ResponseEntity.ok().body(service.buscarTodasContas());
     }
 
     @ApiOperation(value = "Listar conta pelo ID", nickname = "getConta")
     @GetMapping("/contas/{id}")
     public ResponseEntity<Conta> buscarPeloId(@PathVariable int id) {
-        Conta res = service.buscarPeloIdConta(id);
-        if (res != null) {
-            return ResponseEntity.ok(res);
-        }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok().body(service.buscarPeloIdConta(id));
     }
 
     @ApiOperation(value = "Cadastrar uma conta", nickname = "postConta")
