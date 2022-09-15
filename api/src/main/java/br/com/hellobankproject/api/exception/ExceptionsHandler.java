@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class Exceptionhandle {
+public class ExceptionsHandler {
 
     @ResponseBody
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -24,5 +24,19 @@ public class Exceptionhandle {
 
         return new ValidationExceptions(erros, HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.name(),
                 LocalDateTime.now());
+    }
+
+    @ResponseBody
+    @ExceptionHandler(ClienteAlreadyCreatedException.class)
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    public ClienteExceptions erro(ClienteAlreadyCreatedException e) {
+        return new ClienteExceptions(e.getMessage());
+    }
+
+    @ResponseBody
+    @ExceptionHandler(ClienteNotFoundException.class)
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    public ClienteExceptions erro(ClienteNotFoundException e) {
+        return new ClienteExceptions(e.getMessage());
     }
 }
