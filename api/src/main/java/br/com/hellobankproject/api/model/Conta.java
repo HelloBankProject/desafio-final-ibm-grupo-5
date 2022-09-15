@@ -6,6 +6,10 @@ import br.com.hellobankproject.api.exception.SaldoException;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+<<<<<<< HEAD
+=======
+import javax.validation.constraints.NotEmpty;
+>>>>>>> a630457 (add transacao exceptions)
 import javax.validation.constraints.NotNull;
 
 @Entity
