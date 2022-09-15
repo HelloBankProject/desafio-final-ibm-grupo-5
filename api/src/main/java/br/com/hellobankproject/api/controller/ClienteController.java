@@ -1,6 +1,5 @@
 package br.com.hellobankproject.api.controller;
 
-import br.com.hellobankproject.api.exception.ClienteNotFoundException;
 import br.com.hellobankproject.api.model.Cliente;
 import br.com.hellobankproject.api.service.cliente.IClienteService;
 import io.swagger.annotations.Api;
