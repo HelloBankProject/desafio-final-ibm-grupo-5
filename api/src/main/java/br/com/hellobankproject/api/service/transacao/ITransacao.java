@@ -1,45 +1,48 @@
 package br.com.hellobankproject.api.service.transacao;
 
 import br.com.hellobankproject.api.dao.TransacaoDAO;
+import br.com.hellobankproject.api.exception.NotFoundException;
 import br.com.hellobankproject.api.model.Transacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ITransacao implements ITransacaoService {
     @Autowired
     private TransacaoDAO dao;
+    private static final String MSG = "Conta nao cadastrada";
 
     @Override
     public Transacao criarNovoTransacao(Transacao novo) {
-        if (novo.getValor() != null && novo.getModo() != null && novo.getData() != null && novo.getRecebedor() != null && novo.getFornecedor() != null) {
-            return dao.save(novo);
-        }
-        return null;
+        return dao.save(novo);
     }
 
     @Override
     public Transacao atualizarDadosTransacao(Transacao dados) {
-        if (dados.getId() != null && dados.getValor() != null && dados.getModo() != null && dados.getData() != null && dados.getRecebedor() != null && dados.getFornecedor() != null) {
+        if (dao.existsById(dados.getId())) {
             return dao.save(dados);
         }
-        return null;
+        throw new NotFoundException(MSG);
     }
 
     @Override
-    public ArrayList<Transacao> buscarTodosTransacao() {
-        return (ArrayList<Transacao>)dao.findAll();
+    public List<Transacao> buscarTodosTransacao() {
+        return (List<Transacao>) dao.findAll();
     }
 
     @Override
     public Transacao buscarPeloIdTransacao(Integer id) {
-        return dao.findById(id).orElse(null);
+        return dao.findById(id).orElseThrow(() -> new NotFoundException(MSG));
     }
 
     @Override
     public void excluirTransacao(Integer id) {
-        dao.deleteById(id);
+        if (dao.existsById(id)) {
+            dao.deleteById(id);
+        } else {
+            throw new NotFoundException(MSG);
+        }
     }
 }

@@ -2,6 +2,7 @@ package br.com.hellobankproject.api.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import java.util.Date;
 
@@ -13,7 +14,7 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotNull(message = "Campo nao informado")
     @Column(name = "valor")
     private Double valor;
 
