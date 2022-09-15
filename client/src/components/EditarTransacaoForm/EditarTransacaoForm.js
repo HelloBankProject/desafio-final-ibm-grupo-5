@@ -3,10 +3,14 @@ import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import styles from './EditarTransacaoForm.module.scss';
+import axios from 'axios'
+import { useParams, useNavigate } from 'react-router-dom';
 
 function EditarTransacaoForm() {
   let navigate = useNavigate()
 
+  const {id} = useParams()
+  
   const [transacao, setTransacao] = React.useState({
       valor:"",
       data:"",

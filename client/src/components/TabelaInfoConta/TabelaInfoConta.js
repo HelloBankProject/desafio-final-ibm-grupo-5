@@ -1,20 +1,23 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import styles from './TabelaInfoConta.module.scss';
 import { Link, useParams } from 'react-router-dom';
 
+
 function TabelaInfoConta() {
+
   const [conta, setConta] = React.useState([])
   const {id} = useParams()
 
   React.useEffect(() => {
-    loadCliente()
+    loadConta()
   },[])
 
   const loadConta = async () => {
     const resultado = await axios.get("http://localhost:8080/contas")
     setConta(resultado.data)
+    console.log(resultado.data)
+    console.log(id)
   }
 
   const deleteConta = async (id) => {
@@ -22,42 +25,59 @@ function TabelaInfoConta() {
     loadConta()
   }
 
+  
   return (
     <>
 
-      <table class={`table ${styles.tabelaContainer}`}>
+      <table className={`table ${styles.tabelaContainer}`}>
   <thead>
-    <tr>
+    <tr className={styles.tabelaTitulos}>
       <th scope="col">Código</th>
       <th scope="col">Tipo</th>
       <th scope="col">Saldo</th>
       <th scope="col">Credito</th>
       <th scope="col">Primeiro Titular</th>
       <th scope="col">Segundo Titular</th>
-      
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
     {
-      conta.map((conta, index) => {
-        <tr>
-          <th scope="row" key={index}>{conta.id}</th>
-          <td>{conta.tipo}</td>
-          <td>{conta.saldo}</td>
-          <td>{conta.credito}</td>
-          <td>{conta.primeiroTitular.id}</td>
-          <td>{conta.segundoTitular.id}</td>
-          <td>
-          <button className='btn btn-primary mx-2'>Vizualizar</button>
-          <Link className='btn btn-outline-primary mx-2'
-          to={`/editconta/${conta.id}`}
-          >Atualizar</Link>
-          <Link className='btn btn-danger mx-2'
-          onClick={() => deleteCliente(conta.id)}
-          >Deletar</Link>
-        </td>
+      conta.map((conta, index) => (
+        <tr className={styles.tabelaTitulos}>
+        {
+          conta.primeiroTitular.id == id ?
+          <>
+            <th scope="row" key={index+1}>{conta.id}</th>
+            <td>{conta.tipo}</td>
+            <td>{conta.saldo}</td>
+            <td>{conta.credito}</td>
+            <td>{conta.primeiroTitular.id}</td>
+            <td>
+              {
+                conta.segundoTitular === null ? 
+                  <td>null</td>
+                :
+                  <td>{conta.segundoTitular.id}</td>       
+              }
+            </td>
+            <td>
+              <Link className='btn btn-primary mx-2'
+              to={`/viewconta/${conta.id}`}
+              >Vizualizar</Link>
+              <Link className='btn btn-outline-primary mx-2'
+                to={`/editconta/${conta.id}`}
+              >Atualizar</Link>
+              <button className='btn btn-danger mx-2'
+                onClick={() => deleteConta(conta.id)}
+              >Deletar</button>
+            </td>
+          </>
+           : null
+        }
+          
         </tr>
-      })
+      ))
     }
   </tbody>
 </table>

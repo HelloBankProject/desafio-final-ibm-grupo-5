@@ -42,7 +42,7 @@ function TabelaInfo() {
   <tbody>
     {
       cliente.map((cliente,index) => (
-        <tr>
+        <tr className={styles.tabelaTitulos}>
         <th scope="row" key={index}>{cliente.id}</th>
         <td>{cliente.nome}</td>
         <td>{cliente.cpf}</td>
@@ -51,13 +51,15 @@ function TabelaInfo() {
         <td>{cliente.estado}</td>
         <td>{cliente.telefone}</td>
         <td>
-          <button className='btn btn-primary mx-2'>Vizualizar</button>
+          <Link className='btn btn-primary mx-2'
+          to={`/viewcliente/${cliente.id}`}
+          >Vizualizar</Link>
           <Link className='btn btn-outline-primary mx-2'
           to={`/editcliente/${cliente.id}`}
           >Atualizar</Link>
-          <Link className='btn btn-danger mx-2'
+          <button className='btn btn-danger mx-2'
           onClick={() => deleteCliente(cliente.id)}
-          >Deletar</Link>
+          >Deletar</button>
         </td>
     </tr>
       ))

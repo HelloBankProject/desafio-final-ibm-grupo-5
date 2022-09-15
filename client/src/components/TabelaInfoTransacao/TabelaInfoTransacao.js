@@ -25,35 +25,47 @@ function TabelaInfoTransacao() {
     <>
       <table class={`table ${styles.tabelaContainer}`}>
   <thead>
-    <tr>
+    <tr className={styles.tabelaTitulos}>
       <th scope="col">Código</th>
       <th scope="col">Valor</th>
       <th scope="col">Data Transação</th>
       <th scope="col">Modo de Envio</th>
       <th scope="col">Recebedor</th>
       <th scope="col">Fornecedor</th>
-      
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
     {
-      transacao.map((transacao, index) => {
-        <tr>
-          <th scope="row" key={index}>{transacao.id}</th>
-          <td>{transacao.valor}</td>
-          <td>{transacao.data}</td>
-          <td>{transacao.modo}</td>
-          <td>{transacao.recebedor.id}</td>
-          <td>{transacao.fornecedor.id}</td>
-          <button className='btn btn-primary mx-2'>Vizualizar</button>
-          <Link className='btn btn-outline-primary mx-2'
-          to={`/edittransacao/${transacao.id}`}
-          >Atualizar</Link>
-          <Link className='btn btn-danger mx-2'
-          onClick={() => deleteTransacao(transacao.id)}
-          >Deletar</Link>
+      transacao.map((transacao, index) => (
+        <tr className={styles.tabelaTitulos}>
+          {
+            transacao.recebedor.id == id ?
+            <>
+            <th scope="row" key={index}>{transacao.id}</th>
+            <td>{transacao.valor}</td>
+            <td>{transacao.data}</td>
+            <td>{transacao.modo}</td>
+            <td>{transacao.recebedor.id}</td>
+            <td>{transacao.fornecedor.id}</td>
+            <td>
+              <Link className='btn btn-primary mx-2'
+                to={`/viewtransacao/${transacao.id}`}
+              >Vizualizar</Link>
+              <Link className='btn btn-outline-primary mx-2'
+                to={`/edittransacao/${transacao.id}`}
+              >Atualizar</Link>
+              <button className='btn btn-danger mx-2'
+                onClick={() => deleteTransacao(transacao.id)}
+              >Deletar</button>
+            </td>
+            </>
+             : null
+          }
+          
+  
         </tr>
-      })
+      ))
     }
   </tbody>
 </table>

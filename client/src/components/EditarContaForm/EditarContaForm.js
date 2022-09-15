@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import styles from './EditarContaForm.module.scss';
 import axios from 'axios'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function EditarContaForm() {
   let navigate = useNavigate()

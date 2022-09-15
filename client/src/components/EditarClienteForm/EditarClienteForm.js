@@ -4,10 +4,10 @@ import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import styles from './EditarClienteForm.module.scss';
 import axios from 'axios'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function EditarClienteForm() {
-  let navigate = React.useNavigate()
+  let navigate = useNavigate()
 
   const {id} = useParams()
 
