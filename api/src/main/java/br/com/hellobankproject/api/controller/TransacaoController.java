@@ -16,31 +16,24 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-<<<<<<<HEAD
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Valid;=======
-import java.util.List;>>>>>>>ce91f81(fix dependencias)
+import javax.validation.Valid;
 
 @RestController
 @Api(tags = { "Transacão" }, value = "trasancao", description = "Operações relacionadas a Transacões")
 public class TransacaoController {
-
     @Autowired
     private ITransacaoService service;
 
     @ApiOperation(value = "Listar todas as transacões", nickname = "getTransacões")
     @GetMapping("/transacoes")
-    public List<TransacaoResponse> recuperarTodos() {
-        List<TransacaoResponse> listaTransacaoResponse = new ArrayList<>();
-        service.buscarTodosTransacao()
-                .forEach(item -> listaTransacaoResponse.add(TransacaoMapper.toTransacaoResponse(item)));
-
-        return listaTransacaoResponse;
+    public List<Transacao> recuperarTodos() {
+        return service.buscarTodosTransacao();
     }
 
     @ApiOperation(value = "Listar transacão pelo ID", nickname = "getTransacão")

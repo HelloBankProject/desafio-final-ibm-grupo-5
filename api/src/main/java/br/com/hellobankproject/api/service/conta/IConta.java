@@ -6,7 +6,7 @@ import br.com.hellobankproject.api.model.Conta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class IConta implements IContaService {
@@ -28,8 +28,8 @@ public class IConta implements IContaService {
     }
 
     @Override
-    public ArrayList<Conta> buscarTodasContas() {
-        return (ArrayList<Conta>) dao.findAll();
+    public List<Conta> buscarTodasContas() {
+        return (List<Conta>) dao.findAll();
     }
 
     @Override

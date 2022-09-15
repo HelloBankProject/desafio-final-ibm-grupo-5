@@ -2,6 +2,9 @@ package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "conta")
@@ -15,6 +18,7 @@ public class Conta {
     @Column(name = "tipo", length = 50)
     private String tipo;
 
+    @NotNull(message = "Campo nao informado")
     @Column(name = "saldo")
     private Double saldo;
 
