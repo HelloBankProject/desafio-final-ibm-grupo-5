@@ -18,7 +18,7 @@ public class ITransacao implements ITransacaoService {
 
     @Autowired
     private TransacaoDAO dao;
-    private static final String MSG = "Conta nao cadastrada";
+    private static final String MSG = "Transacão não registrada";
 
     @Override
     public Transacao criarNovoTransferencia(Transacao novo) {

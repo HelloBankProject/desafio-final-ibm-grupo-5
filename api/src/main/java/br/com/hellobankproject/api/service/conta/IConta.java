@@ -12,7 +12,7 @@ import java.util.List;
 public class IConta implements IContaService {
     @Autowired
     private ContaDAO dao;
-    private static final String MSG = "Conta nao cadastrada";
+    private static final String MSG = "Conta não cadastrada";
 
     @Override
     public Conta criarNovoConta(Conta novo) {
