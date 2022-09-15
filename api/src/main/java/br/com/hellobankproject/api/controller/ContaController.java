@@ -21,45 +21,33 @@ public class ContaController {
 
     @ApiOperation(value = "Listar todas as contas", nickname = "getConta")
     @GetMapping("/contas")
-    public List<Conta> recuperarTodos() {
-        return service.buscarTodasContas();
+    public ResponseEntity<List<Conta>> recuperarTodos() {
+        return ResponseEntity.ok().body(service.buscarTodasContas());
     }
 
     @ApiOperation(value = "Listar conta pelo ID", nickname = "getConta")
     @GetMapping("/contas/{id}")
     public ResponseEntity<Conta> buscarPeloId(@PathVariable int id) {
-        Conta res = service.buscarPeloIdConta(id);
-        if (res != null) {
-            return ResponseEntity.ok(res);
-        }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok().body(service.buscarPeloIdConta(id));
     }
 
     @ApiOperation(value = "Cadastrar uma conta", nickname = "postConta")
     @PostMapping("/contas")
     public ResponseEntity<Conta> incluirNovo(@RequestBody @Valid Conta novo) {
-        Conta res = service.criarNovoConta(novo);
-        if (res != null) {
-            return ResponseEntity.ok(res);
-        }
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok().body(service.criarNovoConta(novo));
     }
 
     @ApiOperation(value = "Atualizar conta pelo ID", nickname = "putConta")
     @PutMapping("/contas")
     public ResponseEntity<Conta> alterar(@RequestBody @Valid Conta dados) {
-        Conta res = service.atualizarDadosConta(dados);
-        if (res != null) {
-            return ResponseEntity.ok(res);
-        }
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok().body(service.atualizarDadosConta(dados));
     }
 
     @ApiOperation(value = "Deletar conta pelo ID", nickname = "deleteConta")
     @DeleteMapping("/contas/{id}")
-    public ResponseEntity<Conta> excluir(@PathVariable Integer id) {
+    public ResponseEntity<Void> excluir(@PathVariable Integer id) {
         service.excluirConta(id);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok().build();
     }
 
 }

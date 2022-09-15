@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-public class ClienteExceptions {
+public class ModelExceptions {
 
   private String error;
   private final long statusCode = HttpStatus.BAD_REQUEST.value();
@@ -14,7 +14,7 @@ public class ClienteExceptions {
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
   private final LocalDateTime timestamp = LocalDateTime.now();
 
-  public ClienteExceptions(String error) {
+  public ModelExceptions(String error) {
     this.error = error;
   }
 
