@@ -14,12 +14,12 @@ import java.util.List;
 public class ICliente implements IClienteService {
     @Autowired
     private ClienteDAO dao;
-    private static final String MSG = "Cliente nao cadastrado";
+    private static final String MSG = "Cliente não cadastrado";
 
     @Override
     public Cliente criarNovoCliente(Cliente novo) {
         if (dao.findByCpf(novo.getCpf()).isPresent()) {
-            throw new AlreadyCreatedException("Cliente ja cadastrado");
+            throw new AlreadyCreatedException("Cliente já cadastrado");
         }
         return dao.save(novo);
     }
