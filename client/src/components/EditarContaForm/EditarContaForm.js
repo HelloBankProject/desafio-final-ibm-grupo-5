@@ -12,11 +12,16 @@ function EditarContaForm() {
   const {id} = useParams()
 
   const [conta, setConta] = React.useState({
+      id:"",
       tipo:"",
       saldo:"",
       credito:"",
-      primeiroTitular:"",
-      segundoTitular:"",
+      primeiroTitular:{
+        id:"",
+      },
+      segundoTitular:{
+        id:"",
+      },
   })
 
   const { tipo, saldo, credito, primeiroTitular, segundoTitular } = conta
@@ -80,17 +85,32 @@ function EditarContaForm() {
               id="outlined-required"
               label="Primeiro Títular"
               name='primeiroTitular'
-              value={primeiroTitular}
+              value={primeiroTitular.id}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-password-input"
-              label="Segundo Títular"
-              name='segundoTitular'
-              value={segundoTitular}
-              onChange={(e) => handleChange(e)}
-            />
+            
+              {
+                conta.segundoTitular === null ?
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Segundo Títular"
+                  name='segundoTitular'
+                  value="null"
+                  onChange={(e) => handleChange(e)}
+                />
+                :
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Segundo Títular"
+                  name='segundoTitular'
+                  value={segundoTitular.id}
+                  onChange={(e) => handleChange(e)}
+                />
+              }
+              
+             
             <TextField
               required
               id="outlined-required"

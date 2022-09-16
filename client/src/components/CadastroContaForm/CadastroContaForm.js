@@ -1,11 +1,7 @@
-import React, {useState} from 'react';
-import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
-import TextField from '@mui/material/TextField';
-import styles from './CadastroContaForm.module.scss';
-import { TipsAndUpdatesTwoTone } from '@mui/icons-material';
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {useState} from 'react'
+import styles from './CadastroContaForm.module.scss'
+import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom'
 
 function CadastroContaForm() {
 
@@ -15,15 +11,40 @@ function CadastroContaForm() {
       tipo:"",
       saldo:"",
       credito:"",
-      primeiroTitular:"",
-      segundoTitular:"",
+      primeiroTitular: {
+        id: "",
+      },
+      segundoTitular:{
+        id: "",
+      },
   })
 
   const { tipo, saldo, credito, primeiroTitular, segundoTitular } = conta
 
   const handleChange = (e) => {
-    setConta({...conta, [e.target.name]: e.target.value})
-    console.log(conta.nome)
+    const {name, value} = e.target
+    
+    setConta((prevState) => ({
+      ...prevState.saldo, saldo: value,
+      ...prevState.credito, credito: value,
+      
+      
+      primeiroTitular: {
+        ...prevState.primeiroTitular, 
+        id: value,
+      },
+
+      
+      segundoTitular: {
+        ...prevState.segundoTitular, 
+        id: value,
+      },
+
+      ...prevState.tipo, tipo: value,
+    }))
+    
+   
+    console.log(conta)
   }
 
   const onSubmit = async (e) => {
@@ -34,73 +55,73 @@ function CadastroContaForm() {
 
   return (
     <>
-        
-        
-        <div className={styles.cadastroFormContainer}>
-          <div className={styles.tituloContainer}>
-            <h3>Cadastrar Conta</h3>
-          </div>
-          <form onSubmit={(e) => onSubmit(e)}>
-          <Box
-            component="form"
-            sx={{
-              '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-          >
+      <div className={styles.cadastroFormContainer}>
+
+        <div className={styles.tituloContainer}>
+          <h3>Cadastrar Conta</h3>
+        </div>
+
+        <form onSubmit={(e) => onSubmit(e)}>
+          
           <div className={styles.cadastroForm}>
-            <TextField
-              required
-              id="outlined-required"
-              label="Saldo"
+            <input
               name='saldo'
+              type="number"
+              className="form-control"
+              placeholder="Saldo"
+  
               value={saldo}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Crédito"
+            <input
               name='credito'
+              type="number"
+              className="form-control"
+              placeholder="Crédito"
+              
               value={credito}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Primeiro Títular"
+            <input
               name='primeiroTitular'
-              value={primeiroTitular}
+              type="number"
+              className="form-control"
+              placeholder="Primeiro Titular"
+              
+              value={primeiroTitular.id}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-password-input"
-              label="Segundo Títular"
+            <input
               name='segundoTitular'
-              value={segundoTitular}
+              type="number"
+              className="form-control"
+              placeholder="SegundoTitular"
+              
+              value={segundoTitular.id}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Tipo"
+            <input
               name='tipo'
+              type="text"
+              className="form-control"
+              placeholder="Tipo"
+              
               value={tipo}
               onChange={(e) => handleChange(e)}
             />
-            </div>
-            <div className={styles.buttonContainer} >
-              <button className={`btn btn-outline-primary ${styles.cadastrarButton}`} variant="contained" type='submit'>Cadastrar</button>
-              <Link className="btn btn-outline-danger mx-2" to="/">
-                Cancel
-              </Link>
-            </div>
+          </div>
+
+          <div className={styles.buttonContainer} >
+            <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}>
+              Cadastrar
+            </button>
+            <Link className="btn btn-outline-danger mx-2" to="/">
+              Cancel
+            </Link>
+          </div>
             
-          </Box>
-          </form>
-        </div>
+        </form>
+      </div>
         
     </>
   );
