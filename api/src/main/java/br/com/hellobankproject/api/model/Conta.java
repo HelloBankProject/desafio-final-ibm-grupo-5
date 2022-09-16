@@ -1,6 +1,9 @@
 package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -9,18 +12,22 @@ import javax.validation.constraints.NotBlank;
 public class Conta {
 
     @Column(name = "id")
+    @ApiModelProperty(value = "Código da conta")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Tipo da conta")
     @Column(name = "tipo", length = 50)
     private String tipo;
 
     @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Saldo na conta")
     @Column(name = "saldo")
     private Double saldo;
 
+    @ApiModelProperty(value = "Credito da conta")
     @Column(name = "credito")
     private Double credito;
 

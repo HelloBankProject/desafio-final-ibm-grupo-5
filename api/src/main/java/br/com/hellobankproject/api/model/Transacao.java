@@ -3,25 +3,31 @@ package br.com.hellobankproject.api.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Date;
 
 @Entity
 @Table(name = "Transacao")
 public class Transacao {
+    @ApiModelProperty(value = "Código da transação")
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Valor da transação")
     @Column(name = "valor")
     private Double valor;
 
     @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Data da transação")
     @Column(name = "data_transacao")
     private Date data;
 
     @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Mode de envio")
     @Column(name = "modo_envio", length = 50)
     private String modo;
 
