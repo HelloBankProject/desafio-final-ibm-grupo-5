@@ -44,6 +44,18 @@ public class ContaController {
         return ResponseEntity.ok().body(response);
     }
 
+    /*
+    *@PutMapping("/user/{id}")
+    User updateUser(@RequestBody User newUser, @PathVariable Long id) {
+        return userRepository.findById(id)
+                .map(user -> {
+                    user.setUsername(newUser.getUsername());
+                    user.setName(newUser.getName());
+                    user.setEmail(newUser.getEmail());
+                    return userRepository.save(user);
+                }).orElseThrow(() -> new UserNotFoundException(id));
+    }
+    * */
     @ApiOperation(value = "Deletar conta pelo ID", nickname = "deleteConta")
     @DeleteMapping("/contas/{id}")
     public ResponseEntity<Void> excluir(@PathVariable Integer id) {

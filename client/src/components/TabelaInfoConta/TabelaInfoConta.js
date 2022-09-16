@@ -22,6 +22,7 @@ function TabelaInfoConta() {
 
   const deleteConta = async (id) => {
     await axios.delete(`http://localhost:8080/contas/${id}`)
+    console.log("passei por aqui " + id)
     loadConta()
   }
 
@@ -44,23 +45,23 @@ function TabelaInfoConta() {
   <tbody>
     {
       conta.map((conta, index) => (
-        <tr className={styles.tabelaTitulos}>
+        <tr className={styles.tabelaTitulos} key={index}>
         {
           conta.primeiroTitular.id == id ?
           <>
-            <th scope="row" key={index+1}>{conta.id}</th>
+            <th scope="row" >{conta.id}</th>
             <td>{conta.tipo}</td>
             <td>{conta.saldo}</td>
             <td>{conta.credito}</td>
             <td>{conta.primeiroTitular.id}</td>
-            <td>
+            
               {
                 conta.segundoTitular === null ? 
                   <td>null</td>
                 :
                   <td>{conta.segundoTitular.id}</td>       
               }
-            </td>
+            
             <td>
               <Link className='btn btn-primary mx-2'
               to={`/viewconta/${conta.id}`}

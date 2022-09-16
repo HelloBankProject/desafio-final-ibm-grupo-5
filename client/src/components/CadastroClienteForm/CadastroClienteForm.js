@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import axios from 'axios';
-import styles from './CadastroClienteForm.module.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {useState} from 'react'
+import axios from 'axios'
+import styles from './CadastroClienteForm.module.scss'
+import { Link, useNavigate } from 'react-router-dom'
 
 function CadastroClienteForm() {
 
@@ -35,118 +33,113 @@ function CadastroClienteForm() {
     navigate("/")
   }
 
-
   return (
     <>
+      <div className={styles.cadastroFormContainer}>
 
-        <div className={styles.cadastroFormContainer}>
-          <div className={styles.tituloContainer}>
-            <h3>Cadastrar Cliente</h3>
-          </div>
-          <form onSubmit={(e) => onSubmit(e)}>
-          <Box
-            component="form"
-            sx={{
-              '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-          >
+        <div className={styles.tituloContainer}>
+          <h3>Cadastrar Cliente</h3>
+        </div>
+
+        <form onSubmit={(e) => onSubmit(e)}>
+
           <div className={styles.cadastroForm}>
-            <TextField
-              required
-              id="outlined-required"
-              label="Nome Completo"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Nome Completo"
               name='nome'
               value={nome}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="CPF"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="CPF"
               name='cpf'
               value={cpf}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Email"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Email"
               name='email'
               value={email}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-password-input"
-              label="Senha"
-              type="password"
+            <input
+              type={"password"}
+              className="form-control"
+              placeholder="Senha"
               name='senha'
               value={senha}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Endereço"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Endereço"
               name='endereco'
               value={endereco}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Estado"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Estado"
               name='estado'
               value={estado}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Cidade"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Cidade"
               name='cidade'
               value={cidade}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Bairro"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Bairro"
               name='bairro'
               value={bairro}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              id="outlined-required"
-              label="Complemento"
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Complemento"
               name='complemento'
               value={complemento}
               onChange={(e) => handleChange(e)}
               />
-              <TextField
-                required
-                id="outlined-required"
-                label="Telefone"
+              <input
+                type={"text"}
+                className="form-control"
+                placeholder="Telefone"
                 name='telefone'
                 value={telefone}
                 onChange={(e) => handleChange(e)}
               />
             </div>
+
             <div className={styles.buttonContainer}>
-              <button className={`btn btn-outline-primary ${styles.cadastrarButton}`} variant="contained" type='submit' >Cadastrar</button>
+              <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}  >
+                Cadastrar
+              </button>
               <Link className="btn btn-outline-danger mx-2" to="/">
                 Cancel
               </Link>
             </div>
-            
-          </Box>
-          </form>
-        </div>
-        
+
+        </form>
+      
+      </div>
     </>
-  );
+  )
 }
 
 export default CadastroClienteForm
