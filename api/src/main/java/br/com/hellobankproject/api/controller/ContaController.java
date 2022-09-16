@@ -1,5 +1,8 @@
 package br.com.hellobankproject.api.controller;
 
+import br.com.hellobankproject.api.dto.mapper.ContaMapper;
+import br.com.hellobankproject.api.dto.request.contaRequest.ContaRequest;
+import br.com.hellobankproject.api.dto.response.contaResponse.ContaResponse;
 import br.com.hellobankproject.api.model.Conta;
 import br.com.hellobankproject.api.service.conta.IContaService;
 import io.swagger.annotations.Api;
@@ -37,29 +40,23 @@ public class ContaController {
 
     @ApiOperation(value = "Cadastrar uma conta", nickname = "postConta")
     @PostMapping("/contas")
-    public ResponseEntity<Conta> incluirNovo(@RequestBody @Valid Conta novo) {
-        Conta res = service.criarNovoConta(novo);
-        if (res != null) {
-            return ResponseEntity.ok(res);
-        }
-        return ResponseEntity.badRequest().build();
-    }
+    public ResponseEntity<ContaResponse> incluirNovo(@RequestBody @Valid ContaRequest request) {
+        Conta contaRequest = ContaMapper.toConta(request);
+        Conta conta = service.criarNovoConta(contaRequest);
 
-    @ApiOperation(value = "Atualizar conta pelo ID", nickname = "putConta")
-    @PutMapping("/contas")
-    public ResponseEntity<Conta> alterar(@RequestBody @Valid Conta dados) {
-        Conta res = service.atualizarDadosConta(dados);
-        if (res != null) {
-            return ResponseEntity.ok(res);
+        if (conta != null) {
+
+            ContaResponse response = ContaMapper.toContaResponse(conta);
+            return ResponseEntity.ok(response);
         }
         return ResponseEntity.badRequest().build();
     }
 
     @ApiOperation(value = "Deletar conta pelo ID", nickname = "deleteConta")
     @DeleteMapping("/contas/{id}")
-    public ResponseEntity<Conta> excluir(@PathVariable Integer id) {
+    public ResponseEntity<Void> excluir(@PathVariable Integer id) {
         service.excluirConta(id);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok().build();
     }
 
 }

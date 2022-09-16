@@ -2,7 +2,6 @@ package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "conta")
@@ -13,11 +12,9 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Campo nao informado")
     @Column(name = "tipo", length = 50)
     private String tipo;
 
-    @NotBlank(message = "Campo nao informado")
     @Column(name = "saldo")
     private Double saldo;
 
@@ -81,4 +78,33 @@ public class Conta {
     public void setSegundoTitular(Cliente segundoTitular) {
         this.segundoTitular = segundoTitular;
     }
+
+    public Double deposito(Double valor) {
+        this.saldo = this.saldo + valor;
+        return this.saldo;
+    }
+
+    public Double saque(Double valor) {
+        if (valor <= this.saldo) {
+            this.saldo = this.saldo - valor;
+            return this.saldo;
+        }
+
+        return null;
+    }
+
+    public Double receberTransferencia(Double valor) {
+        this.saldo = this.saldo + valor;
+        return this.saldo;
+    }
+
+    public Double enviarTransferencia(Double valor) {
+        if (valor <= this.saldo) {
+            this.saldo = this.saldo - valor;
+            return this.saldo;
+        }
+
+        return null;
+    }
+
 }
