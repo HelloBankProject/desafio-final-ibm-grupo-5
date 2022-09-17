@@ -61,7 +61,7 @@ function EditarClienteForm() {
           <input
               name="id"
               type="hidden"
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Tipo"
               value={id}
               onChange={(e) => handleChange(e)}
@@ -69,7 +69,7 @@ function EditarClienteForm() {
 
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Nome Completo"
               name='nome'
               value={nome}
@@ -77,7 +77,7 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="CPF"
               name='cpf'
               value={cpf}
@@ -85,7 +85,7 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Email"
               name='email'
               value={email}
@@ -93,7 +93,7 @@ function EditarClienteForm() {
             />
             <input
               type={"password"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Senha"
               name='senha'
               value={senha}
@@ -101,7 +101,7 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Endereço"
               name='endereco'
               value={endereco}
@@ -109,7 +109,7 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Estado"
               name='estado'
               value={estado}
@@ -117,7 +117,7 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Cidade"
               name='cidade'
               value={cidade}
@@ -125,7 +125,7 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Bairro"
               name='bairro'
               value={bairro}
@@ -133,7 +133,7 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Complemento"
               name='complemento'
               value={complemento}
@@ -141,7 +141,7 @@ function EditarClienteForm() {
               />
               <input
                 type={"text"}
-                className="form-control"
+                className={`form-control ${styles.contenteField}`}
                 placeholder="Telefone"
                 name='telefone'
                 value={telefone}
@@ -150,10 +150,10 @@ function EditarClienteForm() {
             </div>
 
             <div className={styles.buttonContainer}>
-              <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}  >
+              <button type="submit" className={`btn btn-primary ${styles.cadastrarButton}`}  >
                 Atualizar
               </button>
-              <Link className="btn btn-outline-danger mx-2" to="/">
+              <Link className={`btn btn-danger mx-2 ${styles.cadastrarButtonCancelar}`} to="/">
                 Cancel
               </Link>
             </div>

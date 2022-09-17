@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import styles from './CadastroContaForm.module.scss'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 function CadastroContaForm() {
 
   let navigate = useNavigate()
-
+  const {id} = useParams()
+  
   const [conta, setConta] = useState({
       tipo:"",
       saldo: 0,
@@ -39,7 +40,7 @@ function CadastroContaForm() {
     console.log(conta)
     await axios.post("http://localhost:8080/contas", conta)
     console.log("passei")
-    navigate("/")
+    navigate(`/viewcliente/${id}`)
   }
 
   return (

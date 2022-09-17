@@ -7,12 +7,13 @@ body {
     color: rgb(86, 86, 86);
     margin: auto;
     text-align: center;
-    padding: 10px;
+    padding: 20px 10px 10px 10px;
 }
 
 .cadastroFormContainer {
     margin: auto;
     margin-top: 45px;
+    margin-bottom: 45px;
     border-radius: 5px;
     background-color: white;
     border: 1px solid rgb(219, 219, 219);
@@ -20,22 +21,33 @@ body {
     padding: 0 0 10px 0;
 }
 
+.contenteField {
+    margin-top: 10px;
+}
 .cadastroForm {
     margin: auto;
     text-align: center;
+    padding: 0 45px;
 }
 
 .buttonContainer {
     margin: auto;
-    position: relative;
-    right: 25px;
     margin: 25px 0 0 0;
 }
 .cadastrarButton {
-    margin-left: 40px;
+    position: relative;
+    left: 15px;
     text-align: center;
-   
-    
+    width: 95%;
+    border-radius: 10px;
+}
+
+.cadastrarButtonCancelar {
+    position: relative;
+    left: 8px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 95%;
     border-radius: 10px;
 }
