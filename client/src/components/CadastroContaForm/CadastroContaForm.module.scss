@@ -20,19 +20,33 @@ body {
     padding: 0 0 10px 0;
 }
 
+.contenteField {
+    margin-top: 10px;
+}
 .cadastroForm {
     margin: auto;
     text-align: center;
+    padding: 0 45px;
 }
 
 .buttonContainer {
     margin: auto;
-    position: relative;
-    left: 15px;
     margin: 25px 0 0 0;
 }
 .cadastrarButton {
+    position: relative;
+    left: 15px;
     text-align: center;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.cadastrarButtonCancelar {
+    position: relative;
+    left: 8px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 95%;
     border-radius: 10px;
 }

@@ -1,10 +1,7 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
-import TextField from '@mui/material/TextField';
 import styles from './EditarContaForm.module.scss';
 import axios from 'axios'
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 function EditarContaForm() {
   let navigate = useNavigate()
@@ -26,9 +23,14 @@ function EditarContaForm() {
 
   const { tipo, saldo, credito, primeiroTitular, segundoTitular } = conta
 
+  
+
   const handleChange = (e) => {
-    setConta({...conta, [e.target.name]: e.target.value})
-    console.log(conta.nome)
+    const {name, value} = e.target
+    setConta(prevState => ({
+      ...prevState, [name]: value
+    }))
+    console.log(conta)
   }
 
   React.useEffect(() => {
@@ -37,13 +39,15 @@ function EditarContaForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    await axios.put("http://localhost:8080/contas/${id}", conta)
+    console.log(conta)
+    await axios.put("http://localhost:8080/contas", conta)
     navigate("/")
   }
 
   const loadConta = async () => {
     const result = await axios.get(`http://localhost:8080/contas/${id}`)
     setConta(result.data)
+    console.log(result.data)
   }
 
   return (
@@ -55,77 +59,100 @@ function EditarContaForm() {
             <h3>Atualizar Conta</h3>
           </div>
           <form onSubmit={(e) => onSubmit(e)}>
-          <Box
-            component="form"
-            sx={{
-              '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-          >
+          
           <div className={styles.cadastroForm}>
-            <TextField
-              required
-              id="outlined-required"
-              label="Saldo"
+            
+            <input
+              name="id"
+              type="hidden"
+              className="form-control"
+              placeholder="Tipo"
+              value={id}
+              onChange={(e) => handleChange(e)}
+            />
+             
+              
+            <input
               name='saldo'
+              type="number"
+              className="form-control"
+              placeholder="Saldo"
               value={saldo}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Crédito"
-              name='credito'
-              value={credito}
-              onChange={(e) => handleChange(e)}
-            />
-            <TextField
-              required
-              id="outlined-required"
-              label="Primeiro Títular"
-              name='primeiroTitular'
-              value={primeiroTitular.id}
-              onChange={(e) => handleChange(e)}
-            />
             
-              {
-                conta.segundoTitular === null ?
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Segundo Títular"
-                  name='segundoTitular'
+
+{
+                conta.credito === null ?
+                <input
+                  name='credito'
+                  type="text"
+                  className="form-control"
+                  placeholder="Crédito"
                   value="null"
                   onChange={(e) => handleChange(e)}
                 />
                 :
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Segundo Títular"
+                <input
+                  name='credito'
+                  type="number"
+                  className="form-control"
+                  placeholder="Crédito"
+                  value={credito}
+                  onChange={(e) => handleChange(e)}
+                />
+              }
+
+            <input
+              name='primeiroTitular'
+              type="number"
+              className="form-control"
+              placeholder="Primeiro Titular"
+              
+              value={primeiroTitular.id}
+              onChange={(e) => handleChange(e)}
+            />
+            {
+                conta.segundoTitular === null ?
+                <input
                   name='segundoTitular'
+                  type="text"
+                  className="form-control"
+                  placeholder="Segundo Titular"
+                  value="null"
+                  onChange={(e) => handleChange(e)}
+                />
+                :
+                <input
+                  name='segundoTitular'
+                  type="number"
+                  className="form-control"
+                  placeholder="Segundo Titular"
                   value={segundoTitular.id}
                   onChange={(e) => handleChange(e)}
                 />
               }
-              
-             
-            <TextField
-              required
-              id="outlined-required"
-              label="Tipo"
+            <input
               name='tipo'
+              type="text"
+              className="form-control"
+              placeholder="Tipo"
+              
               value={tipo}
               onChange={(e) => handleChange(e)}
             />
-            </div>
-            <div className={styles.buttonContainer} >
-              <Button className={styles.cadastrarButton} variant="contained" type='submit'>Atualizar</Button>
-            </div>
+          </div>
+
+          <div className={styles.buttonContainer} >
+            <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}>
+              Atualizar
+            </button>
+            <Link className="btn btn-outline-danger mx-2" to="/">
+              Cancel
+            </Link>
+          </div>
             
-          </Box>
-          </form>
+        </form>
         </div>
         
     </>

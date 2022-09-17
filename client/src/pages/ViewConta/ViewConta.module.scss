@@ -2,3 +2,14 @@
     position: relative;
     bottom: 140px;
 }
+
+.detalhamentoAtividadeContainer {
+    display: flex;
+}
+
+.atividadeContainer {
+    position: absolute;
+    top: 110px;
+    right: 60px;
+    display: flex;
+}

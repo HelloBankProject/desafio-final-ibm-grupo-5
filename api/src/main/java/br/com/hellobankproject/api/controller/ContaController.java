@@ -1,5 +1,6 @@
 package br.com.hellobankproject.api.controller;
 
+import br.com.hellobankproject.api.dao.ContaDAO;
 import br.com.hellobankproject.api.model.Conta;
 import br.com.hellobankproject.api.service.conta.IContaService;
 import io.swagger.annotations.Api;
@@ -10,7 +11,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import javax.validation.Valid;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
@@ -19,6 +23,8 @@ public class ContaController {
 
     @Autowired
     private IContaService service;
+
+    private ContaDAO dao;
 
     @ApiOperation(value = "Listar todas as contas", nickname = "getConta")
     @GetMapping("/contas")
@@ -31,7 +37,7 @@ public class ContaController {
     public ResponseEntity<Conta> buscarPeloId(@PathVariable int id) {
         Conta res = service.buscarPeloIdConta(id);
         if (res != null) {
-            return ResponseEntity.ok(res);
+            return ok(res);
         }
         return ResponseEntity.notFound().build();
     }
@@ -41,7 +47,7 @@ public class ContaController {
     public ResponseEntity<Conta> incluirNovo(@RequestBody @Valid Conta novo) {
         Conta res = service.criarNovoConta(novo);
         if (res != null) {
-            return ResponseEntity.ok(res);
+            return ok(res);
         }
         return ResponseEntity.badRequest().build();
     }
@@ -72,7 +78,7 @@ public class ContaController {
     @DeleteMapping("/contas/{id}")
     public ResponseEntity<Conta> excluir(@PathVariable Integer id) {
         service.excluirConta(id);
-        return ResponseEntity.ok(null);
+        return ok(null);
     }
 
 }

@@ -3,6 +3,7 @@ package br.com.hellobankproject.api.service.conta;
 import br.com.hellobankproject.api.model.Conta;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public interface IContaService {
     public Conta criarNovoConta(Conta novo);

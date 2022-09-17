@@ -31,8 +31,8 @@ create table Transacao (
     valor double not null,
     data_transacao date not null,
     modo_envio varchar(50) not null,
-    id_recebedor integer not null,
-    id_fornecedor integer not null,
+    id_recebedor integer null,
+    id_fornecedor integer null,
     foreign key(id_recebedor) references Conta(id) ON DELETE CASCADE ON UPDATE CASCADE,
     foreign key(id_fornecedor) references Conta(id) ON DELETE CASCADE ON UPDATE CASCADE
 );

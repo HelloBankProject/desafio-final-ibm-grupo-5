@@ -46,7 +46,7 @@ function CadastroClienteForm() {
           <div className={styles.cadastroForm}>
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Nome Completo"
               name='nome'
               value={nome}
@@ -54,7 +54,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="CPF"
               name='cpf'
               value={cpf}
@@ -62,7 +62,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Email"
               name='email'
               value={email}
@@ -70,7 +70,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"password"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Senha"
               name='senha'
               value={senha}
@@ -78,7 +78,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Endereço"
               name='endereco'
               value={endereco}
@@ -86,7 +86,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Estado"
               name='estado'
               value={estado}
@@ -94,7 +94,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Cidade"
               name='cidade'
               value={cidade}
@@ -102,7 +102,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Bairro"
               name='bairro'
               value={bairro}
@@ -110,7 +110,7 @@ function CadastroClienteForm() {
             />
             <input
               type={"text"}
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Complemento"
               name='complemento'
               value={complemento}
@@ -118,7 +118,7 @@ function CadastroClienteForm() {
               />
               <input
                 type={"text"}
-                className="form-control"
+                className={`form-control ${styles.contenteField}`}
                 placeholder="Telefone"
                 name='telefone'
                 value={telefone}
@@ -127,10 +127,10 @@ function CadastroClienteForm() {
             </div>
 
             <div className={styles.buttonContainer}>
-              <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}  >
+              <button type="submit" className={`btn btn-primary ${styles.cadastrarButton}`}  >
                 Cadastrar
               </button>
-              <Link className="btn btn-outline-danger mx-2" to="/">
+              <Link className={`btn btn-danger mx-2 ${styles.cadastrarButtonCancelar}`} to="/">
                 Cancel
               </Link>
             </div>

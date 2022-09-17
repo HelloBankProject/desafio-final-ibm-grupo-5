@@ -32,7 +32,14 @@ function DetalhamentoConta() {
                     <div className={styles.subInfo}>
                         <p>Tipo: {conta.tipo}</p>
                         <p>Saldo : {conta.saldo}</p>
-                        <p>Crédito: {conta.credito}</p>
+                       
+                        {
+                            conta.credito === null ? 
+                                <p>Crédito: null</p>
+                            :
+                                <p>Crédito: {conta.credito}</p>
+                            
+                        }
                     </div>
                     <div className={styles.subInfo}>
                         <p>Primeiro Títular: {`${conta.primeiroTitular.nome}`}</p>
