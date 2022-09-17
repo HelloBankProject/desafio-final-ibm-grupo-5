@@ -40,14 +40,14 @@ function TabelaInfoTransacao() {
       transacao.map((transacao, index) => (
         <tr className={styles.tabelaTitulos}>
           {
-            transacao.recebedor.id == id ?
+            transacao.recebedor == id ?
             <>
             <th scope="row" key={index}>{transacao.id}</th>
             <td>{transacao.valor}</td>
             <td>{transacao.data}</td>
             <td>{transacao.modo}</td>
-            <td>{transacao.recebedor.id}</td>
-            <td>{transacao.fornecedor.id}</td>
+            <td>{transacao.recebedor}</td>
+            <td>{transacao.fornecedor}</td>
             <td>
               <Link className='btn btn-primary mx-2'
                 to={`/viewtransacao/${transacao.id}`}

@@ -9,33 +9,36 @@ function CadastroContaForm() {
 
   const [conta, setConta] = useState({
       tipo:"",
-      saldo:"",
-      credito:"",
-      primeiroTitular: {
-        id: "",
-      },
-      segundoTitular:{
-        id: "",
-      },
+      saldo: 0,
+      credito: 0,
+      idPrimeiroTitular: "",
+      idSegundoTitular:"",
   })
 
-  const { tipo, saldo, credito, primeiroTitular, segundoTitular } = conta
+  const { tipo, saldo, credito, idPrimeiroTitular, idSegundoTitular } = conta
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setConta(prevState => ({
-      ...prevState, tipo: value,
-      ...prevState, saldo: value,
-      ...prevState, credito: value,
-        primeiroTitular: {id: value},
-        segundoTitular: {id: value}
-    }))
+    
+    setConta({
+      ...conta, [e.target.name]: e.target.value
+    })
+    
     console.log(conta)
   }
+  /**
+   * const handleChange = (e) => {
+   *    const {name, value} = e.target
+   *    setConta((prevState) => ({
+   *        ...prevState, 
+   * }))
+   * }
+   */
 
   const onSubmit = async (e) => {
     e.preventDefault()
+    console.log(conta)
     await axios.post("http://localhost:8080/contas", conta)
+    console.log("passei")
     navigate("/")
   }
 
@@ -55,7 +58,7 @@ function CadastroContaForm() {
               type="number"
               className={`form-control ${styles.contenteField}`}
               placeholder="Saldo"
-  
+              step="any"
               value={saldo}
               onChange={(e) => handleChange(e)}
             />
@@ -64,26 +67,26 @@ function CadastroContaForm() {
               type="number"
               className={`form-control ${styles.contenteField}`}
               placeholder="Crédito"
-              
+              step="any"
               value={credito}
               onChange={(e) => handleChange(e)}
             />
             <input
-              name='primeiroTitular'
-              type="text"
+              name='idPrimeiroTitular'
+              type="number"
               className={`form-control ${styles.contenteField}`}
               placeholder="Primeiro Titular"
               
-              value={primeiroTitular.id}
+              value={idPrimeiroTitular}
               onChange={(e) => handleChange(e)}
             />
             <input
-              name='segundoTitular'
-              type="texte"
+              name='idSegundoTitular'
+              type="number"
               className={`form-control ${styles.contenteField}`}
               placeholder="SegundoTitular"
               
-              value={segundoTitular.id}
+              value={idSegundoTitular}
               onChange={(e) => handleChange(e)}
             />
             <input

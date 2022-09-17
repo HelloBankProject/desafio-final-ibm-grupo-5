@@ -25,10 +25,7 @@ function EditarClienteForm() {
   const { nome,cpf,email,senha,endereco,estado,cidade,bairro,complemento,telefone} = cliente
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setCliente(prevState => ({
-      ...prevState, [name]: value
-    }))
+    setCliente({...cliente, [e.target.name]: e.target.value})
     console.log(cliente)
   }
 

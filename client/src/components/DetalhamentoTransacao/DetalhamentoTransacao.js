@@ -31,12 +31,12 @@ function DetalhamentoTransacao() {
                 <div className={styles.detalhamentoClienteContainer}>
                     <div className={styles.subInfo}>
                         <p>Modo de Envio: {transacao.modo}</p>
-                        <p>Recebedor: {transacao.recebedor.id}</p>
+                        <p>Recebedor: {transacao.recebedor}</p>
                         <p>Valor: {transacao.valor}</p>
                     </div>
                     <div className={styles.subInfo}>
                         <p>Data: {transacao.data}</p>
-                        <p>Fornecedor: {transacao.fornecedor.id}</p>
+                        <p>Fornecedor: {transacao.fornecedor}</p>
                     </div>
                 </div>
                 
