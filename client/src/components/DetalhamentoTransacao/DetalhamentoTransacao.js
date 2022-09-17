@@ -32,7 +32,7 @@ function DetalhamentoTransacao() {
                     <div className={styles.subInfo}>
                         <p>Modo de Envio: {transacao.modo}</p>
                         <p>Recebedor: {transacao.recebedor}</p>
-                        <p>Valor: {transacao.valor}</p>
+                        <p>Valor: R$ {Intl.NumberFormat('pt-BR').format(transacao.valor)}</p>
                     </div>
                     <div className={styles.subInfo}>
                         <p>Data: {transacao.data}</p>

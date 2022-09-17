@@ -31,13 +31,13 @@ function DetalhamentoConta() {
                 <div className={styles.detalhamentoClienteContainer}>
                     <div className={styles.subInfo}>
                         <p>Tipo: {conta.tipo}</p>
-                        <p>Saldo : {conta.saldo}</p>
+                        <p>Saldo : R$ {Intl.NumberFormat('pt-BR').format(conta.saldo)}</p>
                        
                         {
                             conta.credito === null ? 
                                 <p>Crédito: null</p>
                             :
-                                <p>Crédito: {conta.credito}</p>
+                                <p>Crédito: R$ {Intl.NumberFormat('pt-BR').format(conta.credito)}</p>
                             
                         }
                     </div>

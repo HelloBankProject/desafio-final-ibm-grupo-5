@@ -27,7 +27,7 @@ function TabelaInfoTransacao() {
   <thead>
     <tr className={styles.tabelaTitulos}>
       <th scope="col">Código</th>
-      <th scope="col">Valor</th>
+      <th scope="col">Valor (R$)</th>
       <th scope="col">Data Transação</th>
       <th scope="col">Modo de Envio</th>
       <th scope="col">Recebedor</th>
@@ -43,7 +43,7 @@ function TabelaInfoTransacao() {
             transacao.recebedor == id ?
             <>
             <th scope="row" key={index}>{transacao.id}</th>
-            <td>{transacao.valor}</td>
+            <td>{Intl.NumberFormat('pt-BR').format(transacao.valor)}</td>
             <td>{transacao.data}</td>
             <td>{transacao.modo}</td>
             <td>{transacao.recebedor}</td>
