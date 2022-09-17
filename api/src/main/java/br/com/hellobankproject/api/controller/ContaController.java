@@ -38,14 +38,9 @@ public class ContaController {
     @PostMapping("/contas")
     public ResponseEntity<ContaResponse> incluirNovo(@RequestBody @Valid ContaRequest request) {
         Conta contaRequest = ContaMapper.toConta(request);
-        Conta conta = service.criarNovoConta(contaRequest);
+        ContaResponse response = ContaMapper.toContaResponse(service.criarNovoConta(contaRequest));
 
-        if (conta != null) {
-
-            ContaResponse response = ContaMapper.toContaResponse(conta);
-            return ResponseEntity.ok(response);
-        }
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok().body(response);
     }
 
     @ApiOperation(value = "Deletar conta pelo ID", nickname = "deleteConta")

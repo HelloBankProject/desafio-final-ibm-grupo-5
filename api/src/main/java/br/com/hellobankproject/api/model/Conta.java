@@ -1,9 +1,11 @@
 package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import br.com.hellobankproject.api.exception.SaldoException;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -26,6 +28,7 @@ public class Conta {
     private Double credito;
 
     @ManyToOne
+    @NotBlank
     @JoinColumn(name = "id_cliente")
     @JsonIgnoreProperties({ "listaPrimeiroTitular", "listaSegundoTitular" })
     private Cliente primeiroTitular;
@@ -83,18 +86,18 @@ public class Conta {
         this.segundoTitular = segundoTitular;
     }
 
-    public Double deposito(Double valor) {
+    public void deposito(Double valor) {
         this.saldo = this.saldo + valor;
-        return this.saldo;
+
     }
 
-    public Double saque(Double valor) {
+    public void saque(Double valor) {
         if (valor <= this.saldo) {
             this.saldo = this.saldo - valor;
-            return this.saldo;
+        } else {
+            throw new SaldoException("Saldo indisponivel");
         }
 
-        return null;
     }
 
     public Double receberTransferencia(Double valor) {

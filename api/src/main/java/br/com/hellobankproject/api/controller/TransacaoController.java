@@ -8,19 +8,17 @@ import br.com.hellobankproject.api.dto.response.transacaoResponse.TransacaoDepos
 import br.com.hellobankproject.api.dto.response.transacaoResponse.TransacaoResponse;
 import br.com.hellobankproject.api.dto.response.transacaoResponse.TransacaoSaqueResponse;
 import br.com.hellobankproject.api.dto.response.transacaoResponse.TransacaoTransferenciaResponse;
-import br.com.hellobankproject.api.model.Conta;
 import br.com.hellobankproject.api.model.Transacao;
-import br.com.hellobankproject.api.service.conta.IContaService;
 import br.com.hellobankproject.api.service.transacao.ITransacaoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -32,20 +30,18 @@ public class TransacaoController {
 
     @ApiOperation(value = "Listar todas as transacões", nickname = "getTransacões")
     @GetMapping("/transacoes")
-    public List<Transacao> recuperarTodos() {
-        return service.buscarTodosTransacao();
+    public List<TransacaoResponse> recuperarTodos() {
+        return service.buscarTodosTransacao().stream().map(TransacaoMapper::toTransacaoResponse)
+                .collect(Collectors.toList());
     }
 
     @ApiOperation(value = "Listar transacão pelo ID", nickname = "getTransacão")
     @GetMapping("/transacoes/{id}")
     public ResponseEntity<TransacaoResponse> buscarPeloId(@PathVariable int id) {
-        Transacao transacao = service.buscarPeloIdTransacao(id);
 
-        if (transacao != null) {
-            TransacaoResponse response = TransacaoMapper.toTransacaoResponse(transacao);
-            return ResponseEntity.ok(response);
-        }
-        return ResponseEntity.notFound().build();
+        Transacao transacao = service.buscarPeloIdTransacao(id);
+        TransacaoResponse response = TransacaoMapper.toTransacaoResponse(transacao);
+        return ResponseEntity.ok().body(response);
     }
 
     @ApiOperation(value = "Fazer uma nova transferencia e registra-la", nickname = "postTransferencia")
@@ -54,14 +50,9 @@ public class TransacaoController {
             @RequestBody @Valid TransacaoTransferenciaRequest request) {
 
         Transacao transferenciaResquest = TransacaoMapper.toTransacaoTransferencia(request);
-        Transacao transacao = service.criarNovoTransferencia(transferenciaResquest);
-
-        if (transacao != null) {
-            TransacaoTransferenciaResponse response = TransacaoMapper
-                    .toTransacaoTransferenciaResponse(transacao);
-            return ResponseEntity.ok(response);
-        }
-        return ResponseEntity.badRequest().build();
+        TransacaoTransferenciaResponse response = TransacaoMapper
+                .toTransacaoTransferenciaResponse(service.criarNovoTransferencia(transferenciaResquest));
+        return ResponseEntity.ok().body(response);
     }
 
     @ApiOperation(value = "Fazer uma novo deposito e registra-la", nickname = "postDeposito")
@@ -69,29 +60,20 @@ public class TransacaoController {
     public ResponseEntity<TransacaoDepositoResponse> deposito(@RequestBody @Valid TransacaoDepositoRequest request) {
 
         Transacao depositoRequest = TransacaoMapper.toTransacaoDeposito(request);
-        Transacao transacao = service.criarNovoDeposito(depositoRequest);
+        TransacaoDepositoResponse response = TransacaoMapper
+                .toTransacaoDepositoResponse(service.criarNovoDeposito(depositoRequest));
 
-        if (transacao != null) {
-            TransacaoDepositoResponse response = TransacaoMapper.toTransacaoDepositoResponse(transacao);
-            return ResponseEntity.ok(response);
-        }
-
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok().body(response);
     }
 
     @ApiOperation(value = "Fazer uma novo saque e registra-la", nickname = "postSaque")
     @PostMapping("/transacoes/saque")
-    public ResponseEntity<TransacaoSaqueResponse> deposito(@RequestBody @Valid TransacaoSaqueRequest request) {
+    public ResponseEntity<TransacaoSaqueResponse> saque(@RequestBody @Valid TransacaoSaqueRequest request) {
 
         Transacao saqueRequest = TransacaoMapper.toTransacaoSaque(request);
-        Transacao transacao = service.criarNovoSaque(saqueRequest);
-
-        if (transacao != null) {
-            TransacaoSaqueResponse response = TransacaoMapper.toTransacaoSaqueResponse(transacao);
-            return ResponseEntity.ok(response);
-        }
-
-        return ResponseEntity.badRequest().build();
+        TransacaoSaqueResponse response = TransacaoMapper
+                .toTransacaoSaqueResponse(service.criarNovoSaque(saqueRequest));
+        return ResponseEntity.ok().body(response);
     }
 
 }

@@ -1,5 +1,6 @@
 package br.com.hellobankproject.api.service.transacao;
 
+import br.com.hellobankproject.api.dao.ContaDAO;
 import br.com.hellobankproject.api.dao.TransacaoDAO;
 import br.com.hellobankproject.api.exception.NotFoundException;
 import br.com.hellobankproject.api.model.Conta;
@@ -14,7 +15,7 @@ import java.util.List;
 @Service
 public class ITransacao implements ITransacaoService {
     @Autowired
-    private IContaService conta;
+    private IContaService contaDAO;
 
     @Autowired
     private TransacaoDAO dao;
@@ -22,52 +23,46 @@ public class ITransacao implements ITransacaoService {
 
     @Override
     public Transacao criarNovoTransferencia(Transacao novo) {
-        Conta recebedor = conta.buscarPeloIdConta(novo.getRecebedor().getId());
-        Conta fornecedor = conta.buscarPeloIdConta(novo.getFornecedor().getId());
+        if (contaDAO.existsById(novo.getFornecedor().getId())) {
+            if (contaDAO.existsById(novo.getRecebedor().getId())) {
+                Conta recebedor = contaDAO.buscarPeloIdConta(novo.getRecebedor().getId());
+                Conta fornecedor = contaDAO.buscarPeloIdConta(novo.getFornecedor().getId());
 
-        if (recebedor != null && fornecedor != null) {
-
-            Double res = fornecedor.saque(novo.getValor());
-
-            if (res != null) {
+                fornecedor.saque(novo.getValor());
                 recebedor.deposito(novo.getValor());
-                conta.atualizarDadosConta(recebedor);
-                conta.atualizarDadosConta(fornecedor);
-
+                contaDAO.atualizarDadosConta(recebedor);
+                contaDAO.atualizarDadosConta(fornecedor);
                 return dao.save(novo);
+            } else {
+                throw new NotFoundException("Conta recebedora não cadastrada");
             }
+        } else {
+            throw new NotFoundException("Conta fornecedora não cadastrada");
         }
-
-        return null;
     }
 
     @Override
     public Transacao criarNovoDeposito(Transacao novo) {
-        Conta recebedor = conta.buscarPeloIdConta(novo.getRecebedor().getId());
-        if (recebedor != null) {
-            Double deposito = recebedor.deposito(novo.getValor());
-
-            if (deposito != null) {
-                conta.atualizarDadosConta(recebedor);
-            }
+        if (contaDAO.existsById(novo.getRecebedor().getId())) {
+            Conta conta = contaDAO.buscarPeloIdConta(novo.getRecebedor().getId());
+            conta.deposito(novo.getValor());
+            contaDAO.atualizarDadosConta(conta);
             return dao.save(novo);
+        } else {
+            throw new NotFoundException("Conta não cadastrada");
         }
-        return null;
     }
 
     @Override
     public Transacao criarNovoSaque(Transacao novo) {
-        Conta fornecedor = conta.buscarPeloIdConta(novo.getFornecedor().getId());
-        if (fornecedor != null) {
-            Double saque = fornecedor.saque(novo.getValor());
-
-            if (saque != null) {
-                conta.atualizarDadosConta(fornecedor);
-
-                return dao.save(novo);
-            }
+        if (contaDAO.existsById(novo.getRecebedor().getId())) {
+            Conta conta = contaDAO.buscarPeloIdConta(novo.getRecebedor().getId());
+            conta.saque(novo.getValor());
+            contaDAO.atualizarDadosConta(conta);
+            return dao.save(novo);
+        } else {
+            throw new NotFoundException("Conta não cadastrada");
         }
-        return null;
     }
 
     @Override

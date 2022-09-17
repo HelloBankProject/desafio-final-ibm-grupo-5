@@ -17,7 +17,7 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull(message = "Campo nao informado")
+    @NotNull(message = "Valor nao informado")
     @Column(name = "valor")
     private Double valor;
 

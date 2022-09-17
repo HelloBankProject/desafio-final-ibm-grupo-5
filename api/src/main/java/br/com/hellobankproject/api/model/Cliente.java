@@ -73,11 +73,11 @@ public class Cliente {
      * Nesse vídeo ele ensina a lógica, mas de alguma forma não estou conseguindo
      */
 
-    @OneToMany(mappedBy = "primeiroTitular", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "primeiroTitular", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnoreProperties({ "primeiroTitular", "segundoTitular" })
     private List<Conta> listaPrimeiroTitular;
 
-    @OneToMany(mappedBy = "segundoTitular", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "segundoTitular", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnoreProperties({ "primeiroTitular", "segundoTitular" })
     private List<Conta> listaSegundoTitular;
 

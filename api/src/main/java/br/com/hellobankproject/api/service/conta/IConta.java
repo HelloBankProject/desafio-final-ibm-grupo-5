@@ -1,5 +1,6 @@
 package br.com.hellobankproject.api.service.conta;
 
+import br.com.hellobankproject.api.dao.ClienteDAO;
 import br.com.hellobankproject.api.dao.ContaDAO;
 import br.com.hellobankproject.api.exception.NotFoundException;
 import br.com.hellobankproject.api.model.Conta;
@@ -12,11 +13,17 @@ import java.util.List;
 public class IConta implements IContaService {
     @Autowired
     private ContaDAO dao;
+    @Autowired
+    private ClienteDAO clienteDAO;
     private static final String MSG = "Conta não cadastrada";
 
     @Override
     public Conta criarNovoConta(Conta novo) {
-        return dao.save(novo);
+        if (clienteDAO.existsById(novo.getPrimeiroTitular().getId())) {
+            return dao.save(novo);
+        } else {
+            throw new NotFoundException("Cliente não cadastrado");
+        }
     }
 
     @Override
@@ -45,4 +52,11 @@ public class IConta implements IContaService {
             throw new NotFoundException(MSG);
         }
     }
+
+    @Override
+    public boolean existsById(Integer id) {
+
+        return dao.existsById(id);
+    }
+
 }

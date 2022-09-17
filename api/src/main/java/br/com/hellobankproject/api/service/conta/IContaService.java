@@ -14,4 +14,6 @@ public interface IContaService {
     public Conta buscarPeloIdConta(Integer id);
 
     public void excluirConta(Integer id);
+
+    public boolean existsById(Integer id);
 }

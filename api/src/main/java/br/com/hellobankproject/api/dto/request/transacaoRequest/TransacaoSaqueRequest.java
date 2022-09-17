@@ -1,8 +1,14 @@
 package br.com.hellobankproject.api.dto.request.transacaoRequest;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class TransacaoSaqueRequest {
+    @NotNull(message = "Valor não fornecido")
     private Double valor;
+    @NotBlank(message = "Modo não fornecido")
     private String modo;
+    @NotNull(message = "Conta não fornecida")
     private Integer contaId;
 
     public TransacaoSaqueRequest(Double valor, String modo, Integer contaId) {
