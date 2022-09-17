@@ -19,6 +19,7 @@ function Conta() {
                     <TransferenciaForm />
                 </div>
             </div>
+            <h3 className={styles.theTitule}>Histórico de Transações</h3>
             <TabelaInfoTransacao />
         </>
     )
