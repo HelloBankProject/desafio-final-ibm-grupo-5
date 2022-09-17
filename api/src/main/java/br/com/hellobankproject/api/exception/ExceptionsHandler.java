@@ -39,11 +39,4 @@ public class ExceptionsHandler {
     public ModelExceptions erro(NotFoundException e) {
         return new ModelExceptions(e.getMessage());
     }
-
-    @ResponseBody
-    @ExceptionHandler(SaldoException.class)
-    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
-    public ModelExceptions erro(SaldoException e) {
-        return new ModelExceptions(e.getMessage());
-    }
 }
