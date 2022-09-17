@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class Exceptionhandle {
+public class ExceptionsHandler {
 
     @ResponseBody
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -24,5 +24,19 @@ public class Exceptionhandle {
 
         return new ValidationExceptions(erros, HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.name(),
                 LocalDateTime.now());
+    }
+
+    @ResponseBody
+    @ExceptionHandler(AlreadyCreatedException.class)
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    public ModelExceptions erro(AlreadyCreatedException e) {
+        return new ModelExceptions(e.getMessage());
+    }
+
+    @ResponseBody
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    public ModelExceptions erro(NotFoundException e) {
+        return new ModelExceptions(e.getMessage());
     }
 }

@@ -2,8 +2,11 @@ package br.com.hellobankproject.api.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Transacao")
@@ -13,17 +16,26 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotNull(message = "Valor nao informado")
     @Column(name = "valor")
     private Double valor;
 
-    @NotBlank(message = "Campo nao informado")
     @Column(name = "data_transacao")
-    private Date data;
+    private LocalDateTime data = LocalDateTime.now();
 
-    @NotBlank(message = "Campo nao informado")
+    @NotNull(message = "Campo nao informado")
     @Column(name = "modo_envio", length = 50)
     private String modo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_recebedor")
+    @JsonIgnoreProperties({ "primeiroTitular", "segundoTitular", "tipo" })
+    private Conta recebedor;
+
+    @ManyToOne
+    @JoinColumn(name = "id_fornecedor")
+    @JsonIgnoreProperties({ "primeiroTitular", "segundoTitular", "tipo" })
+    private Conta fornecedor;
 
     public Conta getRecebedor() {
         return recebedor;
@@ -41,14 +53,6 @@ public class Transacao {
         this.fornecedor = fornecedor;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "id_recebedor", nullable = false)
-    private Conta recebedor;
-
-    @ManyToOne
-    @JoinColumn(name = "id_fornecedor", nullable = false)
-    private Conta fornecedor;
-
     public Integer getId() {
         return id;
     }
@@ -65,11 +69,11 @@ public class Transacao {
         this.valor = valor;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
