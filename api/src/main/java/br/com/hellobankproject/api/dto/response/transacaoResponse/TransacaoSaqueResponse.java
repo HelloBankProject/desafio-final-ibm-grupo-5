@@ -1,15 +1,18 @@
 package br.com.hellobankproject.api.dto.response.transacaoResponse;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class TransacaoSaqueResponse {
     private Integer id;
     private Double valor;
-    private Date data;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
+    private LocalDateTime data;
     private String modo;
     private Integer contaId;
 
-    public TransacaoSaqueResponse(Integer id, Double valor, Date data, String modo, Integer contaId) {
+    public TransacaoSaqueResponse(Integer id, Double valor, LocalDateTime data, String modo, Integer contaId) {
         this.id = id;
         this.valor = valor;
         this.data = data;
@@ -37,11 +40,11 @@ public class TransacaoSaqueResponse {
         this.valor = valor;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 

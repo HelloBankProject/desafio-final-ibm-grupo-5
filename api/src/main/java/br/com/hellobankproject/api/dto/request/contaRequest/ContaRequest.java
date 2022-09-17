@@ -1,9 +1,16 @@
 package br.com.hellobankproject.api.dto.request.contaRequest;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class ContaRequest {
+    @NotBlank(message = "Tipo não informado")
     private String tipo;
+    @NotNull(message = "Saldo não informado")
     private Double saldo;
     private Double credito;
+    @NotNull(message = "Cliente não informado")
     private Integer idPrimeiroTitular;
     private Integer idSegundoTitular;
 

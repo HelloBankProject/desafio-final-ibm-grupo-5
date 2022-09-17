@@ -30,7 +30,7 @@ public class ContaController {
 
     @ApiOperation(value = "Listar conta pelo ID", nickname = "getConta")
     @GetMapping("/contas/{id}")
-    public ResponseEntity<Conta> buscarPeloId(@PathVariable int id) {
+    public ResponseEntity<Conta> buscarPeloId(@PathVariable Integer id) {
         return ResponseEntity.ok().body(service.buscarPeloIdConta(id));
     }
 

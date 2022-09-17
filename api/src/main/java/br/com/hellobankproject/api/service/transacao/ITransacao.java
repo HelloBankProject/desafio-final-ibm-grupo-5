@@ -1,6 +1,5 @@
 package br.com.hellobankproject.api.service.transacao;
 
-import br.com.hellobankproject.api.dao.ContaDAO;
 import br.com.hellobankproject.api.dao.TransacaoDAO;
 import br.com.hellobankproject.api.exception.NotFoundException;
 import br.com.hellobankproject.api.model.Conta;

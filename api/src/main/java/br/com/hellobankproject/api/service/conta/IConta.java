@@ -55,7 +55,6 @@ public class IConta implements IContaService {
 
     @Override
     public boolean existsById(Integer id) {
-
         return dao.existsById(id);
     }
 

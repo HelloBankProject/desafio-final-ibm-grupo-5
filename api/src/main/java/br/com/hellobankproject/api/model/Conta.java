@@ -6,10 +6,6 @@ import br.com.hellobankproject.api.exception.SaldoException;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-<<<<<<< HEAD
-=======
-import javax.validation.constraints.NotEmpty;
->>>>>>> a630457 (add transacao exceptions)
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -21,10 +17,11 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotBlank(message = "Tipo não informado")
     @Column(name = "tipo", length = 50)
     private String tipo;
 
-    @NotNull(message = "Campo nao informado")
+    @NotNull(message = "Campo não informado")
     @Column(name = "saldo")
     private Double saldo;
 
@@ -32,7 +29,6 @@ public class Conta {
     private Double credito;
 
     @ManyToOne
-    @NotBlank
     @JoinColumn(name = "id_cliente")
     @JsonIgnoreProperties({ "listaPrimeiroTitular", "listaSegundoTitular" })
     private Cliente primeiroTitular;

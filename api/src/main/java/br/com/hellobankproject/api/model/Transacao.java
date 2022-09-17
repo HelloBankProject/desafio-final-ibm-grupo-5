@@ -6,8 +6,7 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Transacao")
@@ -22,7 +21,7 @@ public class Transacao {
     private Double valor;
 
     @Column(name = "data_transacao")
-    private Date data = Calendar.getInstance().getTime();
+    private LocalDateTime data = LocalDateTime.now();
 
     @NotNull(message = "Campo nao informado")
     @Column(name = "modo_envio", length = 50)
@@ -70,11 +69,11 @@ public class Transacao {
         this.valor = valor;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 

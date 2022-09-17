@@ -10,7 +10,7 @@ public class TransacaoTransferenciaRequest {
     private String modo;
     @NotNull(message = "Recebador não informado")
     private Integer recebedor;
-    @NotBlank(message = "Fornecedor não informado")
+    @NotNull(message = "Fornecedor não informado")
     private Integer fornecedor;
 
     public TransacaoTransferenciaRequest(Double valor, String modo, Integer recebedor, Integer fornecedor) {

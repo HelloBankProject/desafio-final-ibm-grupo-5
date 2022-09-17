@@ -23,37 +23,37 @@ public class Cliente {
     private Integer id;
 
     @CPF(message = "Campo Invalido")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "cpf", length = 14)
     private String cpf;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "nome", length = 50)
     private String nome;
 
     @Email(message = "Campo Invalido")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "email", length = 80)
     private String email;
 
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$", message = "Senha Invalida")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "senha", length = 20)
     private String senha;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "endereco", length = 50)
     private String endereco;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "estado", length = 50)
     private String estado;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "cidade", length = 80)
     private String cidade;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "bairro", length = 80)
     private String bairro;
 
@@ -61,7 +61,7 @@ public class Cliente {
     private String complemento;
 
     @Pattern(regexp = "^[0-9]+$", message = "telefone invalido")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "telefone", length = 11)
     private String telefone;
 
