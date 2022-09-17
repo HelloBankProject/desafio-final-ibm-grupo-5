@@ -23,27 +23,13 @@ function CadastroContaForm() {
 
   const handleChange = (e) => {
     const {name, value} = e.target
-    
-    setConta((prevState) => ({
-      ...prevState.saldo, saldo: value,
-      ...prevState.credito, credito: value,
-      
-      
-      primeiroTitular: {
-        ...prevState.primeiroTitular, 
-        id: value,
-      },
-
-      
-      segundoTitular: {
-        ...prevState.segundoTitular, 
-        id: value,
-      },
-
-      ...prevState.tipo, tipo: value,
+    setConta(prevState => ({
+      ...prevState, tipo: value,
+      ...prevState, saldo: value,
+      ...prevState, credito: value,
+        primeiroTitular: {id: value},
+        segundoTitular: {id: value}
     }))
-    
-   
     console.log(conta)
   }
 
@@ -67,7 +53,7 @@ function CadastroContaForm() {
             <input
               name='saldo'
               type="number"
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Saldo"
   
               value={saldo}
@@ -76,7 +62,7 @@ function CadastroContaForm() {
             <input
               name='credito'
               type="number"
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Crédito"
               
               value={credito}
@@ -84,8 +70,8 @@ function CadastroContaForm() {
             />
             <input
               name='primeiroTitular'
-              type="number"
-              className="form-control"
+              type="text"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Primeiro Titular"
               
               value={primeiroTitular.id}
@@ -93,8 +79,8 @@ function CadastroContaForm() {
             />
             <input
               name='segundoTitular'
-              type="number"
-              className="form-control"
+              type="texte"
+              className={`form-control ${styles.contenteField}`}
               placeholder="SegundoTitular"
               
               value={segundoTitular.id}
@@ -103,7 +89,7 @@ function CadastroContaForm() {
             <input
               name='tipo'
               type="text"
-              className="form-control"
+              className={`form-control ${styles.contenteField}`}
               placeholder="Tipo"
               
               value={tipo}
@@ -112,10 +98,10 @@ function CadastroContaForm() {
           </div>
 
           <div className={styles.buttonContainer} >
-            <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}>
+            <button type="submit" className={`btn btn-primary ${styles.cadastrarButton}`}>
               Cadastrar
             </button>
-            <Link className="btn btn-outline-danger mx-2" to="/">
+            <Link className={`btn btn-danger mx-2 ${styles.cadastrarButtonCancelar}`} to="/">
               Cancel
             </Link>
           </div>

@@ -52,12 +52,6 @@ function TabelaInfoTransacao() {
               <Link className='btn btn-primary mx-2'
                 to={`/viewtransacao/${transacao.id}`}
               >Vizualizar</Link>
-              <Link className='btn btn-outline-primary mx-2'
-                to={`/edittransacao/${transacao.id}`}
-              >Atualizar</Link>
-              <button className='btn btn-danger mx-2'
-                onClick={() => deleteTransacao(transacao.id)}
-              >Deletar</button>
             </td>
             </>
              : null

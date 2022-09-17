@@ -1,10 +1,7 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
-import TextField from '@mui/material/TextField';
 import styles from './EditarTransacaoForm.module.scss';
 import axios from 'axios'
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 function EditarTransacaoForm() {
   let navigate = useNavigate()
@@ -12,18 +9,26 @@ function EditarTransacaoForm() {
   const {id} = useParams()
   
   const [transacao, setTransacao] = React.useState({
+      id:"",
       valor:"",
       data:"",
       modo:"",
-      recebedor:"",
-      fornecedor:"",
+      recebedor:{
+        id:"",
+      },
+      fornecedor:{
+        id:"",
+      }
   })
 
   const { valor, data, modo, recebedor, fornecedor } = transacao
 
   const handleChange = (e) => {
-    setTransacao({...transacao, [e.target.name]: e.target.value})
-    console.log(transacao.nome)
+    const {name, value} = e.target
+    setTransacao(prevState => ({
+      ...prevState, [name]: value
+    }))
+    console.log(transacao)
   }
 
   React.useEffect(() => {
@@ -32,13 +37,15 @@ function EditarTransacaoForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    await axios.put("http://localhost:8080/transacoes/${id}", transacao)
+    console.log(transacao)
+    await axios.put("http://localhost:8080/transacoes", transacao)
     navigate("/")
   }
 
   const loadTransacao = async () => {
     const result = await axios.get(`http://localhost:8080/transacoes/${id}`)
     setTransacao(result.data)
+    console.log(result.data)
   }
 
   return (
@@ -50,62 +57,65 @@ function EditarTransacaoForm() {
             <h3>Atualizar Transaçao</h3>
           </div>
           <form onSubmit={(e) => onSubmit(e)}>
-          <Box
-            component="form"
-            sx={{
-              '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-          >
+          
           <div className={styles.cadastroForm}>
-            <TextField
-              required
-              id="outlined-required"
-              label="Modo de Envio"
+
+            <input
+              name="id"
+              type="hidden"
+              className="form-control"
+              placeholder="Tipo"
+              value={id}
+              onChange={(e) => handleChange(e)}
+            />
+
+            <input
               name='modo'
+              type="text"
+              placeholder='Modo de Envio'
               value={modo}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Data"
+            <input
               name='data'
+              type="date"
+              placeholder='Data'
               value={data}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-required"
-              label="Recebedor"
+            <input
               name='recebedor'
-              value={recebedor}
+              type="text"
+              placeholder='Recebedor'
+              value={recebedor.id}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              required
-              id="outlined-password-input"
-              label="Fornecedor"
+            <input
               name='fornecedor'
-              value={fornecedor}
+              type="text"
+              placeholder='Fornecedor'
+              value={fornecedor.id}
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              className={styles.finalTextField}
-              required
-              id="outlined-required"
-              label="Valor"
+            <input
               name='valor'
+              type="number"
+              placeholder='Valor'
               value={valor}
               onChange={(e) => handleChange(e)}
             />
             
             </div>
+
             <div className={styles.buttonContainer} >
-              <Button className={styles.cadastrarButton} variant="contained" type='submit'>Cadastrar</Button>
-            </div>
-          </Box>
+            <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}>
+              Atualizar
+            </button>
+            <Link className="btn btn-outline-danger mx-2" to="/">
+              Cancel
+            </Link>
+          </div>
+          
           </form>
         </div>
         

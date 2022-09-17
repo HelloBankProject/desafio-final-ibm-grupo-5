@@ -52,7 +52,14 @@ function TabelaInfoConta() {
             <th scope="row" >{conta.id}</th>
             <td>{conta.tipo}</td>
             <td>{conta.saldo}</td>
-            <td>{conta.credito}</td>
+            
+              {
+                conta.credito === null ? 
+                  <td>null</td>
+                :
+                  <td>{conta.credito}</td>       
+              }
+
             <td>{conta.primeiroTitular.id}</td>
             
               {

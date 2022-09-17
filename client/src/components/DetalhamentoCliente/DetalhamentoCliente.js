@@ -38,7 +38,7 @@ function DetalhamentoCliente() {
                         <p>Nome: {cliente.nome}</p>
                         <p>CPF: {cliente.cpf}</p>
                         <p>Email: {cliente.email}</p>
-                        <p>Senha: {cliente.senha}</p>
+                        <p>Telefone: {cliente.telefone}</p>
                     </div>
                     <div className={styles.subInfo}>
                         <p>Endereço: {cliente.endereco}</p>
@@ -46,10 +46,7 @@ function DetalhamentoCliente() {
                         <p>Cidade: {cliente.cidade}</p>
                         <p>Bairro: {cliente.bairro}</p>
                     </div>
-                    <div className={styles.subInfo}>
-                        <p>Complemento: {cliente.complemento}</p>
-                        <p>Telefone: {cliente.telefone}</p>
-                    </div>
+                    
                 </div>
                
             </div>
