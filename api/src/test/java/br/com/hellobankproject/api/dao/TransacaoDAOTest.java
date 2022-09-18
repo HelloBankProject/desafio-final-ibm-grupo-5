@@ -2,6 +2,7 @@ package br.com.hellobankproject.api.dao;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -12,55 +13,60 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import br.com.hellobankproject.api.model.Cliente;
 import br.com.hellobankproject.api.model.Conta;
+import br.com.hellobankproject.api.model.Transacao;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
-public class ContaDAOTest {
+public class TransacaoDAOTest {
 
+  @Autowired
+  private TransacaoDAO transacaoDAO;
+  @Autowired
+  private ContaDAO contaDAO;
   @Autowired
   private ClienteDAO clienteDAO;
 
-  @Autowired
-  private ContaDAO contaDAO;
-
   @Test
-  void save_Conta_WhenSuccessful() {
+  void save_Transacao_WhenSuccessful() {
     Cliente clienteSaved = clienteDAO.save(createCliente());
     Conta contaSaved = contaDAO.save(createConta(clienteSaved));
+    Transacao transacaoSaved = transacaoDAO.save(createTransacao(contaSaved, contaSaved, "Deposito"));
 
-    assertThat(contaSaved).isNotNull();
-    assertThat(contaSaved.getPrimeiroTitular().getId()).isEqualTo(clienteSaved.getId());
+    assertThat(transacaoSaved.getId()).isNotNull();
+    assertThat(transacaoSaved.getRecebedor()).isEqualTo(contaSaved);
+    assertThat(transacaoSaved).isNotNull();
   }
 
   @Test
-  void find_AllContas_WhenSuccessful() {
+  void find_AllTransacao_WhenSuccessful() {
     Cliente clienteSaved = clienteDAO.save(createCliente());
     Conta contaSaved = contaDAO.save(createConta(clienteSaved));
+    Transacao transacaoSaved = transacaoDAO.save(createTransacao(contaSaved, contaSaved, "Deposito"));
 
-    Iterable<Conta> foundAll = contaDAO.findAll();
-
-    assertThat(contaSaved).isIn(foundAll);
+    Iterable<Transacao> foundAll = transacaoDAO.findAll();
     assertThat(foundAll).isNotEmpty();
+    assertThat(transacaoSaved).isIn(foundAll);
   }
 
   @Test
-  void find_Conta_WhenSuccessful() {
+  void find_TransacaoById_WhenSuccessful() {
     Cliente clienteSaved = clienteDAO.save(createCliente());
     Conta contaSaved = contaDAO.save(createConta(clienteSaved));
+    Transacao transacaoSaved = transacaoDAO.save(createTransacao(contaSaved, contaSaved, "Deposito"));
 
-    Optional<Conta> foundById = contaDAO.findById(contaSaved.getId());
-
-    assertThat(foundById).contains(contaSaved).isNotEmpty();
+    Optional<Transacao> foundById = transacaoDAO.findById(transacaoSaved.getId());
+    assertThat(foundById).contains(transacaoSaved).isNotEmpty();
 
   }
 
-  @Test
-  void delete_Conta_WhenSuccessful() {
-    Cliente clienteSaved = clienteDAO.save(createCliente());
-    Conta contaSaved = contaDAO.save(createConta(clienteSaved));
-    contaDAO.delete(contaSaved);
-    Optional<Conta> foundById1 = contaDAO.findById(contaSaved.getId());
-    assertThat(foundById1).isEmpty();
+  public Transacao createTransacao(Conta fornecedor, Conta recebedor, String modo) {
+    Transacao transacao = new Transacao();
+    transacao.setValor(200.0);
+    transacao.setData(LocalDateTime.now());
+    transacao.setModo(modo);
+    transacao.setRecebedor(recebedor);
+    transacao.setFornecedor(fornecedor);
+    return transacao;
   }
 
   public Conta createConta(Cliente cliente) {
