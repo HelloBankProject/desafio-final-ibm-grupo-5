@@ -11,57 +11,53 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import br.com.hellobankproject.api.model.Cliente;
+import br.com.hellobankproject.api.model.Conta;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
-public class ClienteDAOTest {
+public class ContaDAOTest {
 
   @Autowired
   private ClienteDAO clienteDAO;
 
-  @Test
-  void find_ClienteByCpf_WhenSuccessful() {
-    Cliente result = clienteDAO.findByCpf("174.774.077-29").get();
-    assertThat(result).isNotNull();
-    assertThat(result.getCpf()).isEqualTo("174.774.077-29");
-  }
+  @Autowired
+  private ContaDAO contaDAO;
 
   @Test
-  void save_Cliente_WhenSuccessful() {
-    Cliente clienteToBeSaved = createCliente();
-    Cliente result = clienteDAO.save(clienteToBeSaved);
-
-    assertThat(clienteToBeSaved).hasSameClassAs(result);
-    assertThat(result.getId()).isNotNull();
-    assertThat(result.getNome()).isEqualTo(clienteToBeSaved.getNome());
-  }
-
-  @Test
-  void find_ClienteById_WheSuccessful() {
+  void save_Conta_WhenSuccessful() {
     Cliente clienteSaved = clienteDAO.save(createCliente());
-    Optional<Cliente> foundCliente = clienteDAO.findById(clienteSaved.getId());
+    Conta contaSaved = contaDAO.save(createConta(clienteSaved));
 
-    assertThat(foundCliente.get()).hasSameClassAs(clienteSaved);
-    assertThat(foundCliente).isNotEmpty();
-    assertThat(foundCliente.get().getId()).isEqualTo(clienteSaved.getId());
+    assertThat(contaSaved).isNotNull();
+    assertThat(contaSaved.getPrimeiroTitular().getId()).isEqualTo(clienteSaved.getId());
   }
 
   @Test
-  void find_AllClientes_WhenSuccessful() {
+  void find_AllContas_WhenSuccessful() {
     Cliente clienteSaved = clienteDAO.save(createCliente());
-    Iterable<Cliente> foundAll = clienteDAO.findAll();
+    Conta contaSaved = contaDAO.save(createConta(clienteSaved));
 
-    assertThat(clienteSaved).isIn(foundAll);
-    assertThat(foundAll).isNotEmpty().isNotNull();
+    Iterable<Conta> foundAll = contaDAO.findAll();
+
+    assertThat(contaSaved).isIn(foundAll);
+    assertThat(foundAll).isNotEmpty();
   }
 
   @Test
-  void delete_Cliente_WhenSuccessful() {
+  void delete_Conta_WhenSuccessful() {
     Cliente clienteSaved = clienteDAO.save(createCliente());
-    clienteDAO.delete(clienteSaved);
-    Optional<Cliente> foundById = clienteDAO.findById(clienteSaved.getId());
+    Conta contaSaved = contaDAO.save(createConta(clienteSaved));
+    contaDAO.delete(contaSaved);
+    Optional<Conta> foundById1 = contaDAO.findById(contaSaved.getId());
+    assertThat(foundById1).isEmpty();
+  }
 
-    assertThat(foundById).isEmpty();
+  public Conta createConta(Cliente cliente) {
+    Conta conta = new Conta();
+    conta.setTipo("corrente");
+    conta.setSaldo(2000.0);
+    conta.setPrimeiroTitular(cliente);
+    return conta;
   }
 
   public Cliente createCliente() {
