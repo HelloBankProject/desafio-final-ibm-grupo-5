@@ -21,9 +21,10 @@ public class ClienteDAOTest {
 
   @Test
   void find_ClienteByCpf_WhenSuccessful() {
-    Cliente result = clienteDAO.findByCpf("174.774.077-29").get();
+    Cliente result = clienteDAO.findByCpf("581.089.432-13").get();
+
     assertThat(result).isNotNull();
-    assertThat(result.getCpf()).isEqualTo("174.774.077-29");
+    assertThat(result.getCpf()).isEqualTo("581.089.432-13");
   }
 
   @Test
@@ -58,7 +59,7 @@ public class ClienteDAOTest {
   @Test
   void delete_Cliente_WhenSuccessful() {
     Cliente clienteSaved = clienteDAO.save(createCliente());
-    clienteDAO.delete(clienteSaved);
+    clienteDAO.deleteById(clienteSaved.getId());
     Optional<Cliente> foundById = clienteDAO.findById(clienteSaved.getId());
 
     assertThat(foundById).isEmpty();
