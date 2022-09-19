@@ -50,7 +50,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <table align="center">
   <tr>
-    <td align="center">
+    <td>
     - Andre Silva - [GitHub](https://github.com/WhoisAndreoli)
     - Carlos Tavares - [GitHub](https://github.com/carlostsa10)
     - Evaldo Fonseca - [GitHub](https://github.com/evaldovisk)
