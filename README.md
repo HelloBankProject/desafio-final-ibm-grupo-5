@@ -48,15 +48,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### 😎 Contribuição 🫡
 
-<table align="center">
-  <tr>
-    <td>
-    - Andre Silva - [GitHub](https://github.com/WhoisAndreoli)
-    - Carlos Tavares - [GitHub](https://github.com/carlostsa10)
-    - Evaldo Fonseca - [GitHub](https://github.com/evaldovisk)
-    - Luis Eduardo - [GitHub](https://github.com/TCLxEdu17)
-    - Maria Manuele - [GitHub] (https://github.com/ManueleLima)
-    - Juan Carvalho - [GitHub](https://github.com/jsuisjuan)
-    
-  </tr>
-</table>
+<p align="center">
+ <a href="https://github.com/WhoisAndreoli">Andre Silva</a> •
+ <a href="https://github.com/carlostsa10">Carlos Tavares</a> • 
+ <a href="https://github.com/evaldovisk">Evaldo Fonseca</a> • 
+ <a href="https://github.com/TCLxEdu17">Luis Eduardo</a>
+ <a href="https://github.com/jsuisjuan">Juan Carvalho</a> • 
+ <a href="https://github.com/ManueleLim">Maria Manuele</a> • 
+ 
+</p>
+
