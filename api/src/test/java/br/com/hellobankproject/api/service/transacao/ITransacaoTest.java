@@ -12,8 +12,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import javax.swing.Icon;
-
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +19,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import br.com.hellobankproject.api.dao.ContaDAO;
 import br.com.hellobankproject.api.dao.TransacaoDAO;
 import br.com.hellobankproject.api.exception.NotFoundException;
 import br.com.hellobankproject.api.model.Cliente;

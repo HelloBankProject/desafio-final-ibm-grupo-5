@@ -1,7 +1,6 @@
 package br.com.hellobankproject.api.dto.response.transacaoResponse;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

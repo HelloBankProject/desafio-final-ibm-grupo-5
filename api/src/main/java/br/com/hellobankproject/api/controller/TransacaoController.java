@@ -18,7 +18,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,7 +43,7 @@ public class TransacaoController {
 
         Transacao transacao = service.buscarPeloIdTransacao(id);
         TransacaoResponse response = TransacaoMapper.toTransacaoResponse(transacao);
-        return ResponseEntity.ok().body(response);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Fazer uma nova transferencia e registra-la", nickname = "postTransferencia")
@@ -55,7 +54,7 @@ public class TransacaoController {
         Transacao transferenciaResquest = TransacaoMapper.toTransacaoTransferencia(request);
         TransacaoTransferenciaResponse response = TransacaoMapper
                 .toTransacaoTransferenciaResponse(service.criarNovoTransferencia(transferenciaResquest));
-        return ResponseEntity.ok().body(response);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Fazer uma novo deposito e registra-la", nickname = "postDeposito")
@@ -66,7 +65,7 @@ public class TransacaoController {
         TransacaoDepositoResponse response = TransacaoMapper
                 .toTransacaoDepositoResponse(service.criarNovoDeposito(depositoRequest));
 
-        return ResponseEntity.ok().body(response);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Fazer uma novo saque e registra-la", nickname = "postSaque")
@@ -76,7 +75,7 @@ public class TransacaoController {
         Transacao saqueRequest = TransacaoMapper.toTransacaoSaque(request);
         TransacaoSaqueResponse response = TransacaoMapper
                 .toTransacaoSaqueResponse(service.criarNovoSaque(saqueRequest));
-        return ResponseEntity.ok().body(response);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
 }

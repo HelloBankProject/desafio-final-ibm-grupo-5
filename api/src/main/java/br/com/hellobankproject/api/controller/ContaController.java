@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,21 +42,9 @@ public class ContaController {
         Conta contaRequest = ContaMapper.toConta(request);
         ContaResponse response = ContaMapper.toContaResponse(service.criarNovoConta(contaRequest));
 
-        return ResponseEntity.ok().body(response);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    /*
-    *@PutMapping("/user/{id}")
-    User updateUser(@RequestBody User newUser, @PathVariable Long id) {
-        return userRepository.findById(id)
-                .map(user -> {
-                    user.setUsername(newUser.getUsername());
-                    user.setName(newUser.getName());
-                    user.setEmail(newUser.getEmail());
-                    return userRepository.save(user);
-                }).orElseThrow(() -> new UserNotFoundException(id));
-    }
-    * */
     @ApiOperation(value = "Deletar conta pelo ID", nickname = "deleteConta")
     @DeleteMapping("/contas/{id}")
     public ResponseEntity<Void> excluir(@PathVariable Integer id) {

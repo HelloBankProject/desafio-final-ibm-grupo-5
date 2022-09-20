@@ -23,7 +23,6 @@ import br.com.hellobankproject.api.dao.ContaDAO;
 import br.com.hellobankproject.api.exception.NotFoundException;
 import br.com.hellobankproject.api.model.Cliente;
 import br.com.hellobankproject.api.model.Conta;
-import br.com.hellobankproject.api.service.cliente.ICliente;
 
 @ExtendWith(MockitoExtension.class)
 public class IContaTest {
