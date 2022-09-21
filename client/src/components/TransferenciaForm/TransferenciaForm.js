@@ -28,7 +28,7 @@ function TransferenciaForm() {
       e.preventDefault()
       console.log(transferencia)
       await axios.post("http://localhost:8081/transacoes/transferencia", transferencia)
-      navigate("/")
+      window.location.reload()
     }
 
     return (

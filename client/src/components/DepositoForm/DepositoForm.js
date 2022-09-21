@@ -16,7 +16,8 @@ function DepositoForm() {
     })
   
     const { valor } = deposito
-  
+    var contaId = sessionStorage.getItem('chaveConta')
+
     const handleChange = (e) => {
       setDeposito({...deposito, [e.target.name]: e.target.value})
     }
@@ -26,7 +27,7 @@ function DepositoForm() {
     const onSubmit = async (e) => {
       e.preventDefault()
       await axios.post("http://localhost:8081/transacoes/deposito", deposito)
-      navigate("/")
+      window.location.reload()
     }
 
     

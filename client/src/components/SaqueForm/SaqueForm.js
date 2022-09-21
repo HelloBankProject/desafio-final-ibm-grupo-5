@@ -26,7 +26,7 @@ function SaqueForm() {
     const onSubmit = async (e) => {
       e.preventDefault()
       await axios.post("http://localhost:8081/transacoes/saque", saque)
-      navigate("/")
+      window.location.reload()
     }
 
     return (

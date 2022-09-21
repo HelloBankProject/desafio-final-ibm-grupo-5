@@ -7,25 +7,31 @@ function CadastroContaForm() {
 
   let navigate = useNavigate()
   const {id} = useParams()
-  
+  var codigoCliente = sessionStorage.getItem('id')
+
   const [conta, setConta] = useState({
       tipo:"",
       saldo: 0,
       credito: 0,
-      idPrimeiroTitular: "",
+      idPrimeiroTitular: codigoCliente,
       idSegundoTitular:"",
   })
 
   const { tipo, saldo, credito, idPrimeiroTitular, idSegundoTitular } = conta
+ 
+  const [tipoSelectionado, setTipoSelecionado] = useState()
 
   const handleChange = (e) => {
-    
+    console.log(tipoSelectionado)
+    setTipoSelecionado(e.target.value)
     setConta({
       ...conta, [e.target.name]: e.target.value
     })
     
-    console.log(conta)
+  
   }
+
+  var options = React.createCla
   /**
    * const handleChange = (e) => {
    *    const {name, value} = e.target
@@ -38,9 +44,12 @@ function CadastroContaForm() {
   const onSubmit = async (e) => {
     e.preventDefault()
     console.log(conta)
+    console.log(tipoSelectionado)
+    conta.tipo = tipoSelectionado
+    console.log(conta)
     await axios.post("http://localhost:8081/contas", conta)
     console.log("passei")
-    navigate(`/viewcliente/${id}`)
+    navigate(`/viewcliente/${codigoCliente}`)
   }
 
   return (
@@ -56,7 +65,7 @@ function CadastroContaForm() {
           <div className={styles.cadastroForm}>
             <input
               name='saldo'
-              type="number"
+              type="hidden"
               className={`form-control ${styles.contenteField}`}
               placeholder="Saldo"
               step="any"
@@ -65,13 +74,19 @@ function CadastroContaForm() {
             />
             <input
               name='credito'
-              type="number"
+              type="hidden"
               className={`form-control ${styles.contenteField}`}
               placeholder="Crédito"
               step="any"
               value={credito}
               onChange={(e) => handleChange(e)}
             />
+            <select class="form-select" aria-label="Default select example" value={tipoSelectionado} onChange={e => setTipoSelecionado(e.target.value)}>
+              <option selected>Selecione tipo de conta: </option>
+              <option value={"corrente"}>corrente</option>
+              <option value={"poupanca"}>poupança</option>
+              <option value={"salario"}>salário</option> 
+            </select>
             <input
               name='idPrimeiroTitular'
               type="number"
@@ -90,7 +105,8 @@ function CadastroContaForm() {
               value={idSegundoTitular}
               onChange={(e) => handleChange(e)}
             />
-            <input
+            
+            {/* <input
               name='tipo'
               type="text"
               className={`form-control ${styles.contenteField}`}
@@ -98,7 +114,7 @@ function CadastroContaForm() {
               
               value={tipo}
               onChange={(e) => handleChange(e)}
-            />
+            /> */}
           </div>
 
           <div className={styles.buttonContainer} >
