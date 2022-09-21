@@ -2,13 +2,6 @@
 
 ## Descrição do Projeto
 
-<p align="center">Use um banco digital inteligente para suas transações.</p>
-
-<h1 align="center">
-  Criado com <a href="https://pt-br.reactjs.org/">🔗 React e Java</a> 
-  <img alt="license" src="https://img.shields.io/npm/l/m?color=blue&style=plastic" />
- <img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
-</h1>
 
 ### 💻 Desenvolvedores
 
