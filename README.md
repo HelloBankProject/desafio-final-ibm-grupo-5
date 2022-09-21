@@ -2,15 +2,13 @@
 
 ## Descrição do Projeto
 
-Use um banco digital inteligente para suas transações <img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
-
+Use um banco digital inteligente para suas transações.   <img alt="license" src="https://img.shields.io/npm/l/m?color=blue&style=plastic" /> 
 ## Criado com [React e Java 🔗](https://pt-br.reactjs.org/) 
-  <img alt="license" src="https://img.shields.io/npm/l/m?color=blue&style=plastic" />
-
+<img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
 
 ### 💻 Desenvolvedores
 
-#### Equipe 5: 
+##### Equipe 5: Jovens IBMers
   - [Andre Silva](https://github.com/WhoisAndreoli)
   - [Carlos Tavares](https://github.com/carlostsa10)
   - [Evaldo Fonseca](https://github.com/evaldovisk)
@@ -28,4 +26,24 @@ Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-qu
 
 ### Back-end
 
-<p> Nosso back-end consiste num baco de dados utilizando o MYSQL para arma
+<p> Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento de clientes, contas e transações bancárias. Consiste numa API para o controle, tratamento e verificação dos dados enviados pela aplicação front-end.</p>
+
+## 🚀 Tecnologias
+
+- [JAVA](https://www.java.com)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [JUnit](https://junit.org/junit5/)
+- [React](https://pt-br.reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Npm](https://www.npmjs.com/)
+- [Material-UI](https://material-ui.com/)
+- [Material-icons](https://material-ui.com/icons/)
+- [web-vitals](https://web.dev/learn/)
+- [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Git](https://git-scm.com/)
+
+## ⚙️ Funcionalidades
+- Cadastro e atualização de clientes
+- Criação de conta: corrente, poupança, salário e conta conjunta.
+- Registro de transações: débito e crédito.
+
