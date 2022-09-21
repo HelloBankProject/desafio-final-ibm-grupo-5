@@ -1,11 +1,29 @@
-# API - Tudo de Bom
+# API - HelloBank
 
-Esta é uma RESTful API que permite o cadastro de novos clientes, incluindo dados pessoais, dados para contato e controle de estoque de produtos.
+Esta é uma RESTful API que permite o gerenciamento bancário. Aqui você cadastra clientes e suas transações bancárias.
 
 ## **Endpoints**
 
+### **Listar todos os clientes**
+#### `GET` `/clientes`
+
+Essa é a rota que será utilizada para listar todos os clientes cadastrados no sistema.
+
+-   **Requisição**  
+    Sem parâmetros de rota ou de query.  
+
+
+### **Listar cliente específico**
+#### `GET` `/cliente/:id`
+
+Essa é a rota que será utilizada para listar o cliente do id desejado.
+
+-   **Requisição**  
+    O parâmetro de rota será o id do cliente que deseja retornar.  
+    
+    
 ### **Cadastrar um cliente**
-#### `POST` `/cliente`
+#### `POST` `/clientes`
 
 Essa é a rota que será utilizada para cadastrar um novo cliente no sistema.
 
@@ -13,29 +31,33 @@ Essa é a rota que será utilizada para cadastrar um novo cliente no sistema.
     Sem parâmetros de rota ou de query.  
     O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
 
-    -   nome
     -   CPF
+    -   nome
     -   email
+    -   senha
+    -   endereco
+    -   estado
+    -   cidade
+    -   bairro
+    -   complemento
+    -   telefone
 
-#### **Exemplo de requisição**
+### **Atualizar dados de um cliente**
+#### `PUT` `/clientes`
 
-```
-// POST /cliente
-{
-      "nome": "Uallace Gomes",
-      "CPF": "032.565.984-76",
-      "email": "uallace@gmail.com"
-      
-}
-```
+Essa é a rota que será utilizada para atualizar as informações  do cliente do id desejado.
 
-#### **Exemplos de resposta**
+-   **Requisição**  
+    Sem parâmetros de rota ou de query.  
+    O corpo (body) deverá possuir um objeto com as propriedades que serão atualizadas.
 
-```
-{
-      "nome": "Uallace Gomes",
-      "CPF": "032.565.984-76",
-      "email": "uallace@gmail.com",
-      "idcliente": 12
-}
-```
+
+### **Deletar informações de um cliente**
+#### `DELETE` `/clientes:id`
+
+Essa é a rota que será utilizada para listar o cliente do id desejado.
+
+-   **Requisição**  
+    Sem parâmetros de rota ou de query.  
+    
+    
