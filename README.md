@@ -2,11 +2,11 @@
 
 ## Descrição do Projeto
 
-Use um banco digital inteligente para suas transações
+Use um banco digital inteligente para suas transações <img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
 
 ## Criado com [React e Java 🔗](https://pt-br.reactjs.org/) 
   <img alt="license" src="https://img.shields.io/npm/l/m?color=blue&style=plastic" />
- <img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
+
 
 ### 💻 Desenvolvedores
 
@@ -26,3 +26,6 @@ O projeto esta disponível [clicando aqui](#).
 
 Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo), utilizando as funções no Trello para organização do desenvolvimento do projeto.
 
+### Back-end
+
+<p> Nosso back-end consiste num baco de dados utilizando o MYSQL para arma
