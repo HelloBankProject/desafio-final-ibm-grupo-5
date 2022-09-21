@@ -36,6 +36,7 @@ public class ClienteController {
     }
 
     @ApiOperation(value = "Listar cliente pelo ID", nickname = "getCliente")
+
     @GetMapping("/clientes/{id}")
     public ResponseEntity<Cliente> buscarPeloId(@PathVariable Integer id) {
         return ResponseEntity.ok().body(service.buscarPeloIdCliente(id));

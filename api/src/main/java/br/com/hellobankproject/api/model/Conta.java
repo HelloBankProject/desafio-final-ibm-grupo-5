@@ -2,6 +2,7 @@ package br.com.hellobankproject.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import br.com.hellobankproject.api.exception.SaldoException;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
