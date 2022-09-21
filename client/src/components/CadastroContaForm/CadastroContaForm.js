@@ -38,7 +38,7 @@ function CadastroContaForm() {
   const onSubmit = async (e) => {
     e.preventDefault()
     console.log(conta)
-    await axios.post("http://localhost:8080/contas", conta)
+    await axios.post("http://localhost:8081/contas", conta)
     console.log("passei")
     navigate(`/viewcliente/${id}`)
   }

@@ -38,12 +38,12 @@ function EditarTransacaoForm() {
   const onSubmit = async (e) => {
     e.preventDefault()
     console.log(transacao)
-    await axios.put("http://localhost:8080/transacoes", transacao)
+    await axios.put("http://localhost:8081/transacoes", transacao)
     navigate("/")
   }
 
   const loadTransacao = async () => {
-    const result = await axios.get(`http://localhost:8080/transacoes/${id}`)
+    const result = await axios.get(`http://localhost:8081/transacoes/${id}`)
     setTransacao(result.data)
     console.log(result.data)
   }

@@ -27,7 +27,7 @@ function TransferenciaForm() {
     const onSubmit = async (e) => {
       e.preventDefault()
       console.log(transferencia)
-      await axios.post("http://localhost:8080/transacoes/transferencia", transferencia)
+      await axios.post("http://localhost:8081/transacoes/transferencia", transferencia)
       navigate("/")
     }
 

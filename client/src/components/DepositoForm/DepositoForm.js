@@ -25,7 +25,7 @@ function DepositoForm() {
 
     const onSubmit = async (e) => {
       e.preventDefault()
-      await axios.post("http://localhost:8080/transacoes/deposito", deposito)
+      await axios.post("http://localhost:8081/transacoes/deposito", deposito)
       navigate("/")
     }
 

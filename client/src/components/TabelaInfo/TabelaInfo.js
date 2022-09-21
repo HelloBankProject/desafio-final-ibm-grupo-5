@@ -14,12 +14,12 @@ function TabelaInfo() {
   },[])
 
   const loadCliente = async () => {
-    const resultado = await axios.get("http://localhost:8080/clientes")
+    const resultado = await axios.get("http://localhost:8081/clientes")
     setCliente(resultado.data)
   }
 
   const deleteCliente = async (id) => {
-    await axios.delete(`http://localhost:8080/clientes/${id}`)
+    await axios.delete(`http://localhost:8081/clientes/${id}`)
     loadCliente()
   }
 

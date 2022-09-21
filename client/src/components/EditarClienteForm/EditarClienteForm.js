@@ -36,12 +36,12 @@ function EditarClienteForm() {
   const onSubmit = async (e) => {
     e.preventDefault()
     console.log(cliente)
-    await axios.put("http://localhost:8080/clientes", cliente)
+    await axios.put("http://localhost:8081/clientes", cliente)
     navigate("/")
   }
 
   const loadCliente = async () => {
-    const result = await axios.get(`http://localhost:8080/clientes/${id}`)
+    const result = await axios.get(`http://localhost:8081/clientes/${id}`)
     setCliente(result.data)
     console.log(result.data)
   }

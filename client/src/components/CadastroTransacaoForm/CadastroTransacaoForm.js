@@ -26,7 +26,7 @@ function CadastroTransacaoForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    await axios.post("http://localhost:8080/transacoes", transacao)
+    await axios.post("http://localhost:8081/transacoes", transacao)
     navigate("/")
   }
 

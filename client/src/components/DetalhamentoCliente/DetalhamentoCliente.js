@@ -24,7 +24,7 @@ function DetalhamentoCliente() {
     }, []);
     
       const loadCliente = async () => {
-        const result = await axios.get(`http://localhost:8080/clientes/${id}`);
+        const result = await axios.get(`http://localhost:8081/clientes/${id}`);
         setCliente(result.data);
     };
 

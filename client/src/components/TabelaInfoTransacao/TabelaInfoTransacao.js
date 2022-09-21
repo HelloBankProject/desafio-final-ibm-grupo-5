@@ -12,12 +12,12 @@ function TabelaInfoTransacao() {
   },[])
 
   const loadTransacao = async () => {
-    const resultado = await axios.get("http://localhost:8080/transacoes")
+    const resultado = await axios.get("http://localhost:8081/transacoes")
     setTransacao(resultado.data)
   }
 
   const deleteTransacao = async (id) => {
-    await axios.delete(`http://localhost:8080/transacoes/${id}`)
+    await axios.delete(`http://localhost:8081/transacoes/${id}`)
     loadTransacao()
   }
 

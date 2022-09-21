@@ -40,12 +40,12 @@ function EditarContaForm() {
   const onSubmit = async (e) => {
     e.preventDefault()
     console.log(conta)
-    await axios.put("http://localhost:8080/contas", conta)
+    await axios.put("http://localhost:8081/contas", conta)
     navigate(`/viewcliente/${id}`)
   }
 
   const loadConta = async () => {
-    const result = await axios.get(`http://localhost:8080/contas/${id}`)
+    const result = await axios.get(`http://localhost:8081/contas/${id}`)
     setConta(result.data)
     console.log(result.data)
   }

@@ -19,7 +19,7 @@ function DetalhamentoConta() {
     }, []);
     
       const loadConta = async () => {
-        const result = await axios.get(`http://localhost:8080/contas/${id}`);
+        const result = await axios.get(`http://localhost:8081/contas/${id}`);
         setConta(result.data);
     };
 

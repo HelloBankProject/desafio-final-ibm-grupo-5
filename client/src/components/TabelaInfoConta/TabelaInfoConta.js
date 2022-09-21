@@ -14,14 +14,14 @@ function TabelaInfoConta() {
   },[])
 
   const loadConta = async () => {
-    const resultado = await axios.get("http://localhost:8080/contas")
+    const resultado = await axios.get("http://localhost:8081/contas")
     setConta(resultado.data)
     console.log(resultado.data)
     console.log(id)
   }
 
   const deleteConta = async (id) => {
-    await axios.delete(`http://localhost:8080/contas/${id}`)
+    await axios.delete(`http://localhost:8081/contas/${id}`)
     console.log("passei por aqui " + id)
     loadConta()
   }

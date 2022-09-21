@@ -29,7 +29,7 @@ function CadastroClienteForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    await axios.post("http://localhost:8080/clientes", cliente)
+    await axios.post("http://localhost:8081/clientes", cliente)
     navigate("/")
   }
 
