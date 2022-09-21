@@ -37,6 +37,7 @@
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
+- [Java](https://docs.oracle.com/en/java/)
 - [React](https://pt-br.reactjs.org/)
 - [Node.js](https://nodejs.org/en/)
 - [Npm](https://www.npmjs.com/)
