@@ -10,6 +10,16 @@
  <img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
 </h1>
 
+### 💻 Desenvolvedores
+
+<h3>Equipe 5: </h3>
+- [Andre Silva]("https://github.com/WhoisAndreoli")
+- [Carlos Tavares]("https://github.com/carlostsa10")
+- [Evaldo Fonseca](""https://github.com/evaldovisk")
+- [Luis Eduardo]("https://github.com/TCLxEdu17")
+- [Juan Carvalho]("https://github.com/jsuisjuan")
+- [Maria Manuele]("https://github.com/ManueleLima")
+
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
  <a href="#roadmap">Roadmap</a> • 
@@ -33,33 +43,7 @@
 
 O projeto esta disponível [clicando aqui](#).
 
-### 🛠 Tecnologias
-
-As seguintes ferramentas foram usadas na construção do projeto:
-
-- [Java](https://docs.oracle.com/en/java/)
-- [React](https://pt-br.reactjs.org/)
-- [Node.js](https://nodejs.org/en/)
-- [Npm](https://www.npmjs.com/)
-- [Material-UI](https://material-ui.com/)
-- [Material-icons](https://material-ui.com/icons/)
-- [web-vitals](https://web.dev/learn/)
-- [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
-- [Git](https://git-scm.com/)
-
 ### 📑 Metodologias Ágeis 
 
 Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo), utilizando as funções no Trello para organização do desenvolvimento do projeto.
-
-### 😎 Contribuição
-
-<p align="center">
- • <a href="https://github.com/WhoisAndreoli">Andre Silva</a> •
- <a href="https://github.com/carlostsa10">Carlos Tavares</a> • 
- <a href="https://github.com/evaldovisk">Evaldo Fonseca</a> • 
- <a href="https://github.com/TCLxEdu17">Luis Eduardo</a> • 
- <a href="https://github.com/jsuisjuan">Juan Carvalho</a> • 
- <a href="https://github.com/ManueleLim">Maria Manuele</a> • 
- 
-</p>
 
