@@ -43,7 +43,7 @@ public class ClienteController {
     }
 
     @ApiOperation(value = "Cadastrar cliente", nickname = "postCliente")
-    //@PostMapping("/clientes")
+    @PostMapping("/clientes")
     @RequestMapping(value = "/clientes", method =  RequestMethod.POST, produces="application/json", consumes="application/json")
     public ResponseEntity<Cliente> incluirNovo(@RequestBody @Valid Cliente novo) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.criarNovoCliente(novo));
@@ -51,7 +51,7 @@ public class ClienteController {
     }
 
     @ApiOperation(value = "Atualizar cliente", nickname = "putCliente")
-    //@PutMapping("/clientes")
+    @PutMapping("/clientes")
     @RequestMapping(value = "/clientes", method =  RequestMethod.PUT, produces="application/json", consumes="application/json")
     public ResponseEntity<Cliente> alterar(@RequestBody @Valid Cliente dados) {
         return ResponseEntity.ok().body(service.atualizarDadosCliente(dados));
