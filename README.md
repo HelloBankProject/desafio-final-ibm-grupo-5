@@ -12,7 +12,7 @@
 
 ### 💻 Desenvolvedores
 
-<h3>Equipe 5: </h3>
+<h3 align="center">Equipe 5: </h3>
 - [Andre Silva](https://github.com/WhoisAndreoli)
 - [Carlos Tavares](https://github.com/carlostsa10)
 - [Evaldo Fonseca](https://github.com/evaldovisk)
