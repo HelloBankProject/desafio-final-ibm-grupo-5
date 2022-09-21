@@ -13,12 +13,12 @@
 ### 💻 Desenvolvedores
 
 <h3>Equipe 5: </h3>
-- [Andre Silva]("https://github.com/WhoisAndreoli")
-- [Carlos Tavares]("https://github.com/carlostsa10")
-- [Evaldo Fonseca](""https://github.com/evaldovisk")
-- [Luis Eduardo]("https://github.com/TCLxEdu17")
-- [Juan Carvalho]("https://github.com/jsuisjuan")
-- [Maria Manuele]("https://github.com/ManueleLima")
+- [Andre Silva](https://github.com/WhoisAndreoli)
+- [Carlos Tavares](https://github.com/carlostsa10)
+- [Evaldo Fonseca](https://github.com/evaldovisk)
+- [Luis Eduardo](https://github.com/TCLxEdu17)
+- [Juan Carvalho](https://github.com/jsuisjuan)
+- [Maria Manuele](https://github.com/ManueleLima)
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
