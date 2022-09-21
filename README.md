@@ -31,7 +31,7 @@
 
 ### Demonstração
 
-// Link do deploy
+O projeto esta disponível [clicando aqui](#).
 
 ### 🛠 Tecnologias
 
