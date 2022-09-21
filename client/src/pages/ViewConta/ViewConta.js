@@ -6,6 +6,7 @@ import DepositoForm from '../../components/DepositoForm/DepositoForm'
 import SaqueForm from '../../components/SaqueForm/SaqueForm'
 import TransferenciaForm from '../../components/TransferenciaForm/TransferenciaForm'
 import styles from './ViewConta.module.scss'
+import Footer from '../../components/Footer/Footer'
 
 function Conta() {
     return (
@@ -21,6 +22,7 @@ function Conta() {
             </div>
             <h3 className={styles.theTitule}>Histórico de Transações</h3>
             <TabelaInfoTransacao />
+            <Footer />
         </>
     )
 }

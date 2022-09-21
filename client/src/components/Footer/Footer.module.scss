@@ -1,0 +1,34 @@
+.footerContainer {
+    background-color: #1976d2;
+    color: white;
+    padding: 20px;
+    justify-content: flex-end;
+}
+.textContainer {
+  margin: 10px 0 25px 0;
+}
+.textContent {
+  text-align: center;
+  font-size: 26px;
+}
+
+.contentGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grupoContainer {
+  text-align: center;
+  margin: 0 15px;
+}
+
+.littleTitle {
+  text-align: center;
+  font-size: medium;
+}
+.foto {
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+}
