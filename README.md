@@ -12,32 +12,13 @@
 
 ### 💻 Desenvolvedores
 
-<h3 align="center">Equipe 5: </h3>
+<h3>Equipe 5: </h3>
 - [Andre Silva](https://github.com/WhoisAndreoli)
 - [Carlos Tavares](https://github.com/carlostsa10)
 - [Evaldo Fonseca](https://github.com/evaldovisk)
 - [Luis Eduardo](https://github.com/TCLxEdu17)
 - [Juan Carvalho](https://github.com/jsuisjuan)
 - [Maria Manuele](https://github.com/ManueleLima)
-
-<p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
- <a href="#Demonstração">Demonstração da aplicação</a> • 
- <a href="#requisitos">Pré requisitos</a>
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuição">Contribuição</a> • 
-</p>
-
-<h4 align="center"> 
-	🚧  HelloBank 🛠️ Em construção... 🛠️  🚧
-</h4>
-
-### Roadmap
-
-- [x] Cadastro e atualização dos dados do cliente
-- [x] Cadastro e edição de conta
-- [x] Cadastro e edição de transações
 
 ### Demonstração
 
