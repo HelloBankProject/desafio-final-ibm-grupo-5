@@ -12,56 +12,70 @@ import org.hibernate.validator.constraints.br.CPF;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name = "cliente")
 @JsonSerialize
 public class Cliente {
 
     @Column(name = "id")
+    @ApiModelProperty(value = "Código do cliente")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @CPF(message = "Campo Invalido")
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = " CPF do cliente")
     @Column(name = "cpf", length = 14)
     private String cpf;
 
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Nome do cliente")
     @Column(name = "nome", length = 50)
     private String nome;
 
     @Email(message = "Campo Invalido")
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Email do cliente")
     @Column(name = "email", length = 80)
     private String email;
 
+
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$", message = "Senha Invalida")
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Senha do cliente")
     @Column(name = "senha", length = 20)
     private String senha;
 
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Endereço do cliente")
     @Column(name = "endereco", length = 50)
     private String endereco;
 
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Estado do cliente")
     @Column(name = "estado", length = 50)
     private String estado;
 
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Cidade do cliente")
     @Column(name = "cidade", length = 80)
     private String cidade;
 
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Bairro do cliente")
     @Column(name = "bairro", length = 80)
     private String bairro;
 
+    @ApiModelProperty(value = "Complemento do endereco cliente")
     @Column(name = "complemento", length = 5)
     private String complemento;
 
     @Pattern(regexp = "^[0-9]+$", message = "telefone invalido")
-    @NotBlank(message = "Campo não informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Telefone do cliente")
     @Column(name = "telefone", length = 11)
     private String telefone;
 
