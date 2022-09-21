@@ -2,12 +2,20 @@ package br.com.hellobankproject.api.service.transacao;
 
 import br.com.hellobankproject.api.model.Transacao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface ITransacaoService {
-    public Transacao criarNovoTransacao(Transacao novo);
+    public Transacao criarNovoTransferencia(Transacao novo);
+
+    public Transacao criarNovoDeposito(Transacao novo);
+
+    public Transacao criarNovoSaque(Transacao novo);
+
     public Transacao atualizarDadosTransacao(Transacao dados);
-    public ArrayList<Transacao> buscarTodosTransacao();
+
+    public List<Transacao> buscarTodosTransacao();
+
     public Transacao buscarPeloIdTransacao(Integer id);
+
     public void excluirTransacao(Integer id);
 }

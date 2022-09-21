@@ -23,37 +23,37 @@ public class Cliente {
     private Integer id;
 
     @CPF(message = "Campo Invalido")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "cpf", length = 14)
     private String cpf;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "nome", length = 50)
     private String nome;
 
     @Email(message = "Campo Invalido")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "email", length = 80)
     private String email;
 
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$", message = "Senha Invalida")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "senha", length = 20)
     private String senha;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "endereco", length = 50)
     private String endereco;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "estado", length = 50)
     private String estado;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "cidade", length = 80)
     private String cidade;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "bairro", length = 80)
     private String bairro;
 
@@ -61,7 +61,7 @@ public class Cliente {
     private String complemento;
 
     @Pattern(regexp = "^[0-9]+$", message = "telefone invalido")
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Campo não informado")
     @Column(name = "telefone", length = 11)
     private String telefone;
 
@@ -184,4 +184,36 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Cliente other = (Cliente) obj;
+        if (cpf == null) {
+            if (other.cpf != null)
+                return false;
+        } else if (!cpf.equals(other.cpf))
+            return false;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
 }

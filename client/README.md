@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">HelloBank</h1>
 
 ## Descrição do Projeto
@@ -53,3 +54,18 @@ As seguintes ferramentas foram usadas na construção do projeto:
     - Evaldo Fonseca - [GitHub](https://github.com/evaldovisk)
   </tr>
 </table>
+=======
+# Hello Bank 
+
+### 😎 Contribuição
+
+<p align="center">
+ • <a href="https://github.com/WhoisAndreoli">Andre Silva</a> •
+ <a href="https://github.com/carlostsa10">Carlos Tavares</a> • 
+ <a href="https://github.com/evaldovisk">Evaldo Fonseca</a> • 
+ <a href="https://github.com/TCLxEdu17">Luis Eduardo</a> • 
+ <a href="https://github.com/jsuisjuan">Juan Carvalho</a> • 
+ <a href="https://github.com/ManueleLim">Maria Manuele</a> • 
+ 
+</p>
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429

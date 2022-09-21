@@ -25,10 +25,14 @@ function EditarClienteForm() {
   const { nome,cpf,email,senha,endereco,estado,cidade,bairro,complemento,telefone} = cliente
 
   const handleChange = (e) => {
+<<<<<<< HEAD
     const {name, value} = e.target
     setCliente(prevState => ({
       ...prevState, [name]: value
     }))
+=======
+    setCliente({...cliente, [e.target.name]: e.target.value})
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
     console.log(cliente)
   }
 
@@ -64,7 +68,11 @@ function EditarClienteForm() {
           <input
               name="id"
               type="hidden"
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Tipo"
               value={id}
               onChange={(e) => handleChange(e)}
@@ -72,7 +80,11 @@ function EditarClienteForm() {
 
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Nome Completo"
               name='nome'
               value={nome}
@@ -80,7 +92,11 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="CPF"
               name='cpf'
               value={cpf}
@@ -88,7 +104,11 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Email"
               name='email'
               value={email}
@@ -96,7 +116,11 @@ function EditarClienteForm() {
             />
             <input
               type={"password"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Senha"
               name='senha'
               value={senha}
@@ -104,7 +128,11 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Endereço"
               name='endereco'
               value={endereco}
@@ -112,7 +140,11 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Estado"
               name='estado'
               value={estado}
@@ -120,7 +152,11 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Cidade"
               name='cidade'
               value={cidade}
@@ -128,7 +164,11 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Bairro"
               name='bairro'
               value={bairro}
@@ -136,7 +176,11 @@ function EditarClienteForm() {
             />
             <input
               type={"text"}
+<<<<<<< HEAD
               className="form-control"
+=======
+              className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               placeholder="Complemento"
               name='complemento'
               value={complemento}
@@ -144,7 +188,11 @@ function EditarClienteForm() {
               />
               <input
                 type={"text"}
+<<<<<<< HEAD
                 className="form-control"
+=======
+                className={`form-control ${styles.contenteField}`}
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
                 placeholder="Telefone"
                 name='telefone'
                 value={telefone}
@@ -153,10 +201,17 @@ function EditarClienteForm() {
             </div>
 
             <div className={styles.buttonContainer}>
+<<<<<<< HEAD
               <button type="submit" className={`btn btn-outline-primary ${styles.cadastrarButton}`}  >
                 Atualizar
               </button>
               <Link className="btn btn-outline-danger mx-2" to="/">
+=======
+              <button type="submit" className={`btn btn-primary ${styles.cadastrarButton}`}  >
+                Atualizar
+              </button>
+              <Link className={`btn btn-danger mx-2 ${styles.cadastrarButtonCancelar}`} to="/">
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
                 Cancel
               </Link>
             </div>

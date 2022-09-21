@@ -29,7 +29,7 @@ create table Conta (
 create table Transacao (
 	id integer primary key auto_increment,
     valor double not null,
-    data_transacao date not null,
+    data_transacao datetime not null,
     modo_envio varchar(50) not null,
     id_recebedor integer null,
     id_fornecedor integer null,
@@ -41,11 +41,11 @@ create table Transacao (
 
 select * from cliente;
 insert into Cliente (cpf,nome,email,senha,endereco,estado,cidade,bairro,complemento,telefone) values
-("174.774.077-29","Juan Carvalho Silva de Lima","juanc.s.delima@gmail.com","juaN01md","Rua José Saly, 185","Rio de Janeiro","São Gonçalo","Porto Novo","Sobrado","21989447785"),
-("029.999.037-07", "Fabio da Silva Almeida","fabios.almeida@gmail.com","faBio88jew","Travessia Maria Rita","Pernambuco","Recife","Ipojuca",null,"06783332424"),
-("672.229.492-44", "Ana Claudia da Silva","anacclaudia.amada@gmail.com","lind0lfU","Rua Vinte e Sete","Maranhão","Caxias","Bela Vista","Casa Amarela","53999874652"),
-("113.777.230-15", "Mariane Rodrigues Menedes","mari03.menedes@gmail.com","mariM4r1.PjC","Rua São Vicente de Paula, 632","Mato Grosso do Sul","Nova Andradina","Vila Operária",null,"23883345678"),
-("066.666.234-66","Thomas Cavalcante Sotero","thomaScaval135@gmail.com","ttfweCavalfq45.Jdsa","Rua Graciliano Ramos, B5","Paraná","Cascavel","Alto Alegre","Edifício Recanto Verde", "55976433123");
+("581.089.432-13","Juan Carvalho Silva de Lima","juanc.s.delima@gmail.com","juaN01/md","Rua José Saly, 185","Rio de Janeiro","São Gonçalo","Porto Novo","Sobrado","21989447785"),
+("160.433.937-35", "Fabio da Silva Almeida","fabios.almeida@gmail.com","faBio88!/jew","Travessia Maria Rita","Pernambuco","Recife","Ipojuca",null,"06783332424"),
+("335.645.942-21", "Ana Claudia da Silva","anacclaudia.amada@gmail.com","lind0/lfU","Rua Vinte e Sete","Maranhão","Caxias","Bela Vista","Casa Amarela","53999874652"),
+("048.582.380-24", "Mariane Rodrigues Menedes","mari03.menedes@gmail.com","mariM4/r1.PjC","Rua São Vicente de Paula, 632","Mato Grosso do Sul","Nova Andradina","Vila Operária",null,"23883345678"),
+("826.764.600-05","Thomas Cavalcante Sotero","thomaScaval135@gmail.com","ttfweCav/alfq45.Jdsa","Rua Graciliano Ramos, B5","Paraná","Cascavel","Alto Alegre","Edifício Recanto Verde", "55976433123");
 
 
 select * from conta;

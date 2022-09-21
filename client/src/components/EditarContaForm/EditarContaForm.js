@@ -41,7 +41,11 @@ function EditarContaForm() {
     e.preventDefault()
     console.log(conta)
     await axios.put("http://localhost:8080/contas", conta)
+<<<<<<< HEAD
     navigate("/")
+=======
+    navigate(`/viewcliente/${id}`)
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
   }
 
   const loadConta = async () => {

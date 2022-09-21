@@ -35,8 +35,13 @@ function TabelaInfoConta() {
     <tr className={styles.tabelaTitulos}>
       <th scope="col">Código</th>
       <th scope="col">Tipo</th>
+<<<<<<< HEAD
       <th scope="col">Saldo</th>
       <th scope="col">Credito</th>
+=======
+      <th scope="col">Saldo (R$)</th>
+      <th scope="col">Crédito (R$)</th>
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
       <th scope="col">Primeiro Titular</th>
       <th scope="col">Segundo Titular</th>
       <th scope="col">Ações</th>
@@ -51,13 +56,21 @@ function TabelaInfoConta() {
           <>
             <th scope="row" >{conta.id}</th>
             <td>{conta.tipo}</td>
+<<<<<<< HEAD
             <td>{conta.saldo}</td>
+=======
+            <td>{Intl.NumberFormat('pt-BR').format(conta.saldo)}</td>
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
             
               {
                 conta.credito === null ? 
                   <td>null</td>
                 :
+<<<<<<< HEAD
                   <td>{conta.credito}</td>       
+=======
+                  <td>{Intl.NumberFormat('pt-BR').format(conta.credito)}</td>       
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               }
 
             <td>{conta.primeiroTitular.id}</td>
@@ -73,9 +86,12 @@ function TabelaInfoConta() {
               <Link className='btn btn-primary mx-2'
               to={`/viewconta/${conta.id}`}
               >Vizualizar</Link>
+<<<<<<< HEAD
               <Link className='btn btn-outline-primary mx-2'
                 to={`/editconta/${conta.id}`}
               >Atualizar</Link>
+=======
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
               <button className='btn btn-danger mx-2'
                 onClick={() => deleteConta(conta.id)}
               >Deletar</button>

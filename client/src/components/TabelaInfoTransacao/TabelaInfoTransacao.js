@@ -27,7 +27,11 @@ function TabelaInfoTransacao() {
   <thead>
     <tr className={styles.tabelaTitulos}>
       <th scope="col">Código</th>
+<<<<<<< HEAD
       <th scope="col">Valor</th>
+=======
+      <th scope="col">Valor (R$)</th>
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
       <th scope="col">Data Transação</th>
       <th scope="col">Modo de Envio</th>
       <th scope="col">Recebedor</th>
@@ -40,6 +44,7 @@ function TabelaInfoTransacao() {
       transacao.map((transacao, index) => (
         <tr className={styles.tabelaTitulos}>
           {
+<<<<<<< HEAD
             transacao.recebedor.id == id ?
             <>
             <th scope="row" key={index}>{transacao.id}</th>
@@ -48,6 +53,16 @@ function TabelaInfoTransacao() {
             <td>{transacao.modo}</td>
             <td>{transacao.recebedor.id}</td>
             <td>{transacao.fornecedor.id}</td>
+=======
+            transacao.recebedor == id ?
+            <>
+            <th scope="row" key={index}>{transacao.id}</th>
+            <td>{Intl.NumberFormat('pt-BR').format(transacao.valor)}</td>
+            <td>{transacao.data}</td>
+            <td>{transacao.modo}</td>
+            <td>{transacao.recebedor}</td>
+            <td>{transacao.fornecedor}</td>
+>>>>>>> fad3de1aea2230c9a78b91e4e505328e2f087429
             <td>
               <Link className='btn btn-primary mx-2'
                 to={`/viewtransacao/${transacao.id}`}
