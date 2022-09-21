@@ -31,12 +31,13 @@
 
 ### Demonstração
 
-// Link do deploy
+O projeto esta disponível [clicando aqui](#).
 
 ### 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
+- [Java](https://docs.oracle.com/en/java/)
 - [React](https://pt-br.reactjs.org/)
 - [Node.js](https://nodejs.org/en/)
 - [Npm](https://www.npmjs.com/)
@@ -46,13 +47,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 - [Git](https://git-scm.com/)
 
-### 😎 Contribuição 🫡
+### 📑 Metodologias Ágeis 
+
+Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo), utilizando as funções no Trello para organização do desenvolvimento do projeto.
+
+### 😎 Contribuição
 
 <p align="center">
  • <a href="https://github.com/WhoisAndreoli">Andre Silva</a> •
  <a href="https://github.com/carlostsa10">Carlos Tavares</a> • 
  <a href="https://github.com/evaldovisk">Evaldo Fonseca</a> • 
- <a href="https://github.com/TCLxEdu17">Luis Eduardo</a>
+ <a href="https://github.com/TCLxEdu17">Luis Eduardo</a> • 
  <a href="https://github.com/jsuisjuan">Juan Carvalho</a> • 
  <a href="https://github.com/ManueleLim">Maria Manuele</a> • 
  
