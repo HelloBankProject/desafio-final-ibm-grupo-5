@@ -49,7 +49,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Metodologias Ágeis 
 
-Usamos a [seguinte](https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo) tabela no Trello para organização do desenvolvimento.
+Usamos [esta](https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo) tabela no Trello para organização do desenvolvimento.
 
 ### 😎 Contribuição
 
