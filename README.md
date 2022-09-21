@@ -47,7 +47,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 - [Git](https://git-scm.com/)
 
-### 😎 Contribuição 🫡
+### 😎 Contribuição
 
 <p align="center">
  • <a href="https://github.com/WhoisAndreoli">Andre Silva</a> •
