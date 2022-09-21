@@ -1,28 +1,39 @@
 package br.com.hellobankproject.api.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.annotations.ApiModelProperty;
+
+import io.swagger.annotations.ApiModelProperty;
+
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "Transacao")
 public class Transacao {
+    @ApiModelProperty(value = "Código da transação")
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull(message = "Valor nao informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Valor da transação")
     @Column(name = "valor")
     private Double valor;
 
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Data da transação")
     @Column(name = "data_transacao")
     private LocalDateTime data = LocalDateTime.now();
 
-    @NotNull(message = "Campo nao informado")
+    @NotBlank(message = "Campo nao informado")
+    @ApiModelProperty(value = "Mode de envio")
     @Column(name = "modo_envio", length = 50)
     private String modo;
 
