@@ -47,6 +47,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 - [Git](https://git-scm.com/)
 
+### Metodologias Ágeis 
+
+Usamos a [seguinte] (https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo)tabela no Trello para organização do desenvolvimento.
+
 ### 😎 Contribuição
 
 <p align="center">
