@@ -18,6 +18,7 @@ function CadastroTransacaoForm() {
   })
 
   const { valor, data, modo, recebedor, fornecedor } = transacao
+  var contaId = sessionStorage.getItem('chaveConta')
 
   const handleChange = (e) => {
     setTransacao({...transacao, [e.target.name]: e.target.value})
@@ -27,7 +28,7 @@ function CadastroTransacaoForm() {
   const onSubmit = async (e) => {
     e.preventDefault()
     await axios.post("http://localhost:8081/transacoes", transacao)
-    navigate("/")
+    navigate(`/viewconta/${contaId}`)
   }
 
   return (

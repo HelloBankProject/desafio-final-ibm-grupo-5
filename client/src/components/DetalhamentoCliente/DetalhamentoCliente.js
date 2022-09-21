@@ -18,7 +18,7 @@ function DetalhamentoCliente() {
     })
 
     const { id } = useParams();
-
+    sessionStorage.setItem('id', id)
     useEffect(() => {
         loadCliente();
     }, []);

@@ -13,6 +13,7 @@ function DetalhamentoConta() {
     })
 
     const { id } = useParams();
+    sessionStorage.setItem('chaveConta', id)
 
     useEffect(() => {
         loadConta();

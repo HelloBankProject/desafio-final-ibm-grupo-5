@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom'
 import MenuItem from '@mui/material/MenuItem';
 
 
-const pages = ['home', 'addconta', 'contato'];
+const pages = ['home', 'addconta'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {

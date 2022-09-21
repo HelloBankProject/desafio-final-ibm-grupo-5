@@ -19,12 +19,12 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotBlank(message = "Tipo nao informado")
     @ApiModelProperty(value = "Tipo da conta")
     @Column(name = "tipo", length = 50)
     private String tipo;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotNull(message = "valor nao informado")
     @ApiModelProperty(value = "Saldo na conta")
     @Column(name = "saldo")
     private Double saldo;

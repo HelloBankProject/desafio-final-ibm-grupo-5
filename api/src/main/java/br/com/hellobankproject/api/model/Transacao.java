@@ -22,12 +22,12 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Campo nao informado")
+    @NotNull(message = "Valor nao informado")
     @ApiModelProperty(value = "Valor da transação")
     @Column(name = "valor")
     private Double valor;
 
-    @NotBlank(message = "Campo nao informado")
+
     @ApiModelProperty(value = "Data da transação")
     @Column(name = "data_transacao")
     private LocalDateTime data = LocalDateTime.now();
