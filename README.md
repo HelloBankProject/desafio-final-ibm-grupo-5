@@ -5,7 +5,7 @@
 
 <div style="display: flex; justify-content:space-between;">  
 
-<table style="align:center;">
+<table style="align: baseline;">
   <tr>
     <td >
       <a href="https://github.com/WhoisAndreoli">
