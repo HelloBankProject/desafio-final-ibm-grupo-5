@@ -4,8 +4,8 @@
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
 <table align="stretch">
-  <tr>
-    <td >
+  <tr align="center">
+    <td align="center">
       <a href="https://github.com/WhoisAndreoli">
         <img src="https://avatars.githubusercontent.com/u/78062867?v=4" width="80px;" style="border-radius: 50%;" alt="Foto do Andre Silva"/><br>
         <sub>
@@ -26,7 +26,7 @@
      </td>
       </tr>
       
-  <tr>
+  <tr align="center">
     <td align="center">
       <a href="https://github.com/evaldovisk">
         <img src="https://avatars.githubusercontent.com/u/86272926?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Evaldo Fonseca"/><br>
@@ -37,7 +37,7 @@
     </td>
     </tr>
     
- <tr>
+ <tr align="center">
     <td align="center">
       <a href="https://github.com/TCLxEdu17">
         <img src="https://avatars.githubusercontent.com/u/102531994?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Luis Eduardo"/><br>
@@ -47,7 +47,7 @@
       </a>
     </td>
     </tr>
- <tr>
+ <tr align="center">
     <td align="center">
       <a href="https://github.com/jsuisjuan">
         <img src="https://avatars.githubusercontent.com/u/72449972?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Juan Carvalho"/><br>
@@ -58,7 +58,7 @@
     </td>
     </tr>
     
- <tr>
+ <tr align="center">
     <td align="center">
       <a href="https://github.com/ManueleLima">
         <img src="https://avatars.githubusercontent.com/u/103943543?v=4" width="80px;" style="border-radius: 50%" alt="Foto da Maria Manuele"/><br>
