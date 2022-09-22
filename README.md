@@ -26,8 +26,8 @@ Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-qu
 
 ### Back-end
 
-<p> Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento de clientes, contas e transações bancárias. Consiste numa API para o controle, tratamento e verificação dos dados enviados pela aplicação front-end.
-    O código que deu vida a API esta direcionado na pasta api, e [clicando aqui](https://github.com/HelloBankProject/desafio-final-ibm-grupo-5/tree/main/api) você será direcionado (a) para lá.</p>
+Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento de clientes, contas e transações bancárias. Consiste numa API para o controle, tratamento e verificação dos dados enviados pela aplicação front-end.
+    O código que deu vida a API esta direcionado na pasta api, e [clicando aqui](https://github.com/HelloBankProject/desafio-final-ibm-grupo-5/tree/main/api) você será direcionado (a) para lá.
     
 ### Front-end
 <p>Nossa aplicação WEB permite a qualquer pessoa a sua organização financeira através do uso das funcionalidades disponiveis no HelloBank.</p>
