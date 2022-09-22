@@ -1,11 +1,11 @@
 
 ### 💻 Desenvolvedores
 
-####👨🏻‍💻 Equipe 5: Jovens IBMers
+#### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
 <div style="display: flex; justify-content:space-between;">  
 
-<table style="text-align:center; flex:1;">
+<table style="align:center;">
   <tr>
     <td >
       <a href="https://github.com/WhoisAndreoli">
