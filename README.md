@@ -45,11 +45,11 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
-<table align="left">
+<table align="flex-center">
   <tr>
     <td align="center">
       <a href="https://github.com/WhoisAndreoli">
-        <img src="https://avatars.githubusercontent.com/u/78062867?v=4" width="80px;" alt="Foto do Andre Silva"/><br>
+        <img src="https://avatars.githubusercontent.com/u/78062867?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Andre Silva"/><br>
         <sub>
           <b>Andre Silva</b>
         </sub>
@@ -60,7 +60,7 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
     <td align="center">
     </a>
       <a href="https://github.com/carlostsa10">
-        <img src="https://avatars.githubusercontent.com/u/92460525?v=4" width="80px;" alt="Foto do Carlos Tavares"/><br>
+        <img src="https://avatars.githubusercontent.com/u/92460525?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Carlos Tavares"/><br>
         <sub>
           <b>Carlos Tavares</b>
         </sub>
@@ -69,7 +69,7 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
       <tr>
     <td align="center">
       <a href="https://github.com/evaldovisk">
-        <img src="https://avatars.githubusercontent.com/u/86272926?v=4" width="80px;" alt="Foto do Evaldo Fonseca"/><br>
+        <img src="https://avatars.githubusercontent.com/u/86272926?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Evaldo Fonseca"/><br>
         <sub>
           <b>Evaldo Fonseca</b>
         </sub>
@@ -79,7 +79,7 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
     <tr>
     <td align="center">
       <a href="https://github.com/TCLxEdu17">
-        <img src="https://avatars.githubusercontent.com/u/102531994?v=4" width="80px;" alt="Foto do Luis Eduardo"/><br>
+        <img src="https://avatars.githubusercontent.com/u/102531994?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Luis Eduardo"/><br>
         <sub>
           <b>Luis Eduardo</b>
         </sub>
@@ -89,7 +89,7 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
     <tr>
     <td align="center">
       <a href="https://github.com/jsuisjuan">
-        <img src="https://avatars.githubusercontent.com/u/72449972?v=4" width="80px;" alt="Foto do Juan Carvalho"/><br>
+        <img src="https://avatars.githubusercontent.com/u/72449972?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Juan Carvalho"/><br>
         <sub>
           <b>Juan Carvalho</b>
         </sub>
@@ -99,7 +99,7 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
     <tr>
     <td align="center">
       <a href="https://github.com/ManueleLima">
-        <img src="https://avatars.githubusercontent.com/u/103943543?v=4" width="80px;" alt="Foto da Maria Manuele"/><br>
+        <img src="https://avatars.githubusercontent.com/u/103943543?v=4" width="80px;" style="border-radius: 50%" alt="Foto da Maria Manuele"/><br>
         <sub>
           <b>Maria Manuele</b>
         </sub>
