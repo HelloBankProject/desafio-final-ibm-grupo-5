@@ -8,7 +8,7 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
 
 ### 💻 Desenvolvedores
 
-##### Equipe 5: Jovens IBMers
+##### 👨🏻‍💻 Equipe 5: Jovens IBMers
   - [Andre Silva](https://github.com/WhoisAndreoli)
   - [Carlos Tavares](https://github.com/carlostsa10)
   - [Evaldo Fonseca](https://github.com/evaldovisk)
@@ -18,7 +18,7 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
 
 ### Demonstração
 
-O projeto esta disponível [clicando aqui](#).
+O projeto esta disponível [clicando aqui](https://hellobank-jovensibmers.vercel.app/).
 
 ### 📑 Metodologias Ágeis 
 
@@ -26,9 +26,12 @@ Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-qu
 
 ### Back-end
 
-<p> Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento de clientes, contas e transações bancárias. Consiste numa API para o controle, tratamento e verificação dos dados enviados pela aplicação front-end.</p>
-
-## 🚀 Tecnologias
+<p> Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento de clientes, contas e transações bancárias. Consiste numa API para o controle, tratamento e verificação dos dados enviados pela aplicação front-end.
+    O código que deu vida a API esta direcionado na pasta api, e [clicando aqui](https://github.com/HelloBankProject/desafio-final-ibm-grupo-5/tree/main/api) você será direcionado (a) para lá.</p>
+    
+### Front-end
+<p>Nossa aplicação WEB permite a qualquer pessoa a sua organização financeira através do uso das funcionalidades disponiveis no HelloBank.</p>
+### 🚀 Tecnologias
 
 - [JAVA](https://www.java.com)
 - [Spring Boot](https://spring.io/projects/spring-boot)
