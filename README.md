@@ -10,7 +10,7 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <a href="https://github.com/WhoisAndreoli">
@@ -31,16 +31,46 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
         </sub>
      </td>
       </tr>
-
-  
-</table>
-
-  - [Andre Silva]()
-  - [Carlos Tavares]()
-  - [Evaldo Fonseca](https://github.com/evaldovisk)
-  - [Luis Eduardo](https://github.com/TCLxEdu17)
-  - [Juan Carvalho](https://github.com/jsuisjuan)
-  - [Maria Manuele](https://github.com/ManueleLima)
+      <tr>
+    <td align="center">
+      <a href="https://github.com/evaldovisk">
+        <img src="https://avatars.githubusercontent.com/u/86272926?v=4" width="80px;" alt="Foto do Evaldo Fonseca"/><br>
+        <sub>
+          <b>Evaldo Fonseca</b>
+        </sub>
+      </a>
+    </td>
+    </tr>
+    <tr>
+    <td align="center">
+      <a href="https://github.com/TCLxEdu17">
+        <img src="https://avatars.githubusercontent.com/u/102531994?v=4" width="80px;" alt="Foto do Luis Eduardo"/><br>
+        <sub>
+          <b>Luis Eduardo</b>
+        </sub>
+      </a>
+    </td>
+    </tr>
+    <tr>
+    <td align="center">
+      <a href="https://github.com/jsuisjuan">
+        <img src="https://avatars.githubusercontent.com/u/72449972?v=4" width="80px;" alt="Foto do Juan Carvalho"/><br>
+        <sub>
+          <b>Juan Carvalho</b>
+        </sub>
+      </a>
+    </td>
+    </tr>
+    <tr>
+    <td align="center">
+      <a href="https://github.com/ManueleLima">
+        <img src="https://avatars.githubusercontent.com/u/103943543?v=4" width="80px;" alt="Foto da Maria Manuele"/><br>
+        <sub>
+          <b>Maria Manuele</b>
+        </sub>
+      </a>
+    </td>
+    </tr>
 
 ### Demonstração
 
