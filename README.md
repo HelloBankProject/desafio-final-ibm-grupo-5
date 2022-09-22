@@ -19,13 +19,16 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
           <b>Andre Silva</b>
         </sub>
       </a>
+    </td>
+    
+    <td align="center">
+    </a>
       <a href="https://github.com/carlostsa10">
         <img src="https://avatars.githubusercontent.com/u/92460525?v=4" width="80px;" alt="Foto do Carlos Tavares"/><br>
         <sub>
           <b>Carlos Tavares</b>
         </sub>
-      </a>
-    </td>
+        </td>
   </tr>
   
 </table>
