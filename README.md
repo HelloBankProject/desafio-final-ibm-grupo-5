@@ -1,7 +1,7 @@
 
 ### 💻 Desenvolvedores
 
-#### 👨🏻‍💻 Equipe 5: Jovens IBMers
+<h4> 👨🏻‍💻 Equipe 5: Jovens IBMers </h4>
 
 <table align="center">
   <tr>
