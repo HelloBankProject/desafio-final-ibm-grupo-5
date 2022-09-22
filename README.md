@@ -1,7 +1,9 @@
 
 ### 💻 Desenvolvedores
 
-<h4 style="display: flex; justify-content:space-between;"> 👨🏻‍💻 Equipe 5: Jovens IBMers </h4>
+####👨🏻‍💻 Equipe 5: Jovens IBMers
+
+<div style="display: flex; justify-content:space-between;">  
 
 <table style="text-align:center; flex:1;">
   <tr>
@@ -68,3 +70,4 @@
       </a>
     </td>
     </tr>
+</div>
