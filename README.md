@@ -7,7 +7,7 @@
 <table>
   <tr>
     <td align="center"><img style="width: 150px; border-radius: 50%" 
-    src=""https://avatars.githubusercontent.com/u/78062867?v=4"
+    src="https://avatars.githubusercontent.com/u/78062867?v=4"
      alt="Andre Silva"/><br /><sub style="font-size: 14px"><b>Andre Silva</b></sub><br /> 
     <a href="https://github.com/WhoisAndreoli" alt="Github">
     <br>
