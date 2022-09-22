@@ -9,8 +9,29 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
 ### 💻 Desenvolvedores
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
-  - [Andre Silva](https://github.com/WhoisAndreoli)
-  - [Carlos Tavares](https://github.com/carlostsa10)
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/WhoisAndreoli">
+        <img src="https://avatars.githubusercontent.com/u/78062867?v=4" width="80px;" alt="Foto do Andre Silva"/><br>
+        <sub>
+          <b>Andre Silva</b>
+        </sub>
+      </a>
+      <a href="https://github.com/carlostsa10">
+        <img src="https://avatars.githubusercontent.com/u/92460525?v=4" width="80px;" alt="Foto do Carlos Tavares"/><br>
+        <sub>
+          <b>Carlos Tavares</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+  
+</table>
+
+  - [Andre Silva]()
+  - [Carlos Tavares]()
   - [Evaldo Fonseca](https://github.com/evaldovisk)
   - [Luis Eduardo](https://github.com/TCLxEdu17)
   - [Juan Carvalho](https://github.com/jsuisjuan)
