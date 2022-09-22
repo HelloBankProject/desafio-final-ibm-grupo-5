@@ -3,7 +3,7 @@
 
 <h4> 👨🏻‍💻 Equipe 5: Jovens IBMers </h4>
 
-<table align="center">
+<table align="raw">
   <tr>
     <td >
       <a href="https://github.com/WhoisAndreoli">
