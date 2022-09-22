@@ -6,6 +6,41 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
 ## Criado com [React e Java 🔗](https://pt-br.reactjs.org/) 
 <img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
 
+### Demonstração
+
+O projeto esta disponível [clicando aqui](https://hellobank-jovensibmers.vercel.app/).
+
+### 📑 Metodologias Ágeis 
+
+Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo), utilizando as funções no Trello para organização do desenvolvimento do projeto.
+
+### Back-end
+
+Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento de clientes, contas e transações bancárias. Consiste numa API para o controle, tratamento e verificação dos dados enviados pela aplicação front-end.
+    O código que deu vida a API esta direcionado na pasta api, e [clicando aqui](https://github.com/HelloBankProject/desafio-final-ibm-grupo-5/tree/main/api) você será direcionado (a) para lá.
+    
+### Front-end
+<p>Nossa aplicação WEB permite a qualquer pessoa a sua organização financeira através do uso das funcionalidades disponiveis no HelloBank.</p>
+
+### 🚀 Tecnologias
+
+- [JAVA](https://www.java.com)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [JUnit](https://junit.org/junit5/)
+- [React](https://pt-br.reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Npm](https://www.npmjs.com/)
+- [Material-UI](https://material-ui.com/)
+- [Material-icons](https://material-ui.com/icons/)
+- [web-vitals](https://web.dev/learn/)
+- [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Git](https://git-scm.com/)
+
+### ⚙️ Funcionalidades
+- Cadastro e atualização de clientes
+- Criação de conta: corrente, poupança, salário e conta conjunta.
+- Registro de transações: débito e crédito.
+
 ### 💻 Desenvolvedores
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
@@ -72,38 +107,5 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
     </td>
     </tr>
 
-### Demonstração
 
-O projeto esta disponível [clicando aqui](https://hellobank-jovensibmers.vercel.app/).
-
-### 📑 Metodologias Ágeis 
-
-Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-quadro-modelo), utilizando as funções no Trello para organização do desenvolvimento do projeto.
-
-### Back-end
-
-Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento de clientes, contas e transações bancárias. Consiste numa API para o controle, tratamento e verificação dos dados enviados pela aplicação front-end.
-    O código que deu vida a API esta direcionado na pasta api, e [clicando aqui](https://github.com/HelloBankProject/desafio-final-ibm-grupo-5/tree/main/api) você será direcionado (a) para lá.
-    
-### Front-end
-<p>Nossa aplicação WEB permite a qualquer pessoa a sua organização financeira através do uso das funcionalidades disponiveis no HelloBank.</p>
-
-### 🚀 Tecnologias
-
-- [JAVA](https://www.java.com)
-- [Spring Boot](https://spring.io/projects/spring-boot)
-- [JUnit](https://junit.org/junit5/)
-- [React](https://pt-br.reactjs.org/)
-- [Node.js](https://nodejs.org/en/)
-- [Npm](https://www.npmjs.com/)
-- [Material-UI](https://material-ui.com/)
-- [Material-icons](https://material-ui.com/icons/)
-- [web-vitals](https://web.dev/learn/)
-- [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
-- [Git](https://git-scm.com/)
-
-### ⚙️ Funcionalidades
-- Cadastro e atualização de clientes
-- Criação de conta: corrente, poupança, salário e conta conjunta.
-- Registro de transações: débito e crédito.
 
