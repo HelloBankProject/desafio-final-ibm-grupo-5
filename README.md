@@ -45,11 +45,11 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
-<table align="flex-center">
+<table align="center">
   <tr>
-    <td align="center">
+    <td >
       <a href="https://github.com/WhoisAndreoli">
-        <img src="https://avatars.githubusercontent.com/u/78062867?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Andre Silva"/><br>
+        <img src="https://avatars.githubusercontent.com/u/78062867?v=4" width="80px;" style="border-radius: 50%;" alt="Foto do Andre Silva"/><br>
         <sub>
           <b>Andre Silva</b>
         </sub>
