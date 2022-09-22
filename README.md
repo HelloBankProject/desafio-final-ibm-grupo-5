@@ -45,7 +45,7 @@ Nosso back-end consiste num baco de dados utilizando o MYSQL para armazenamento 
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
-<table align="center">
+<table align="left">
   <tr>
     <td align="center">
       <a href="https://github.com/WhoisAndreoli">
