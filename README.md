@@ -8,7 +8,7 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
 
 ### 💻 Desenvolvedores
 
-##### 👨🏻‍💻 Equipe 5: Jovens IBMers
+#### 👨🏻‍💻 Equipe 5: Jovens IBMers
   - [Andre Silva](https://github.com/WhoisAndreoli)
   - [Carlos Tavares](https://github.com/carlostsa10)
   - [Evaldo Fonseca](https://github.com/evaldovisk)
@@ -31,6 +31,7 @@ Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-qu
     
 ### Front-end
 <p>Nossa aplicação WEB permite a qualquer pessoa a sua organização financeira através do uso das funcionalidades disponiveis no HelloBank.</p>
+
 ### 🚀 Tecnologias
 
 - [JAVA](https://www.java.com)
@@ -45,7 +46,7 @@ Usamos a tabela disponível [neste link](https://trello.com/b/Xkl1XdwH/kanban-qu
 - [React-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)
 - [Git](https://git-scm.com/)
 
-## ⚙️ Funcionalidades
+### ⚙️ Funcionalidades
 - Cadastro e atualização de clientes
 - Criação de conta: corrente, poupança, salário e conta conjunta.
 - Registro de transações: débito e crédito.
