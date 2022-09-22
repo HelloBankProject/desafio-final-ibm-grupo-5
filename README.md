@@ -20,7 +20,8 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
         </sub>
       </a>
     </td>
-    
+    </tr>
+  <tr>
     <td align="center">
     </a>
       <a href="https://github.com/carlostsa10">
@@ -28,8 +29,9 @@ Use um banco digital inteligente para suas transações.   <img alt="license" sr
         <sub>
           <b>Carlos Tavares</b>
         </sub>
-        </td>
-  </tr>
+     </td>
+      </tr>
+
   
 </table>
 
