@@ -3,9 +3,7 @@
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
-<div style="display: flex; justify-content:space-between;">  
-
-<table style="align: baseline;">
+<table align="start">
   <tr>
     <td >
       <a href="https://github.com/WhoisAndreoli">
@@ -70,4 +68,4 @@
       </a>
     </td>
     </tr>
-</div>
+
