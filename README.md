@@ -3,69 +3,66 @@
 
 #### 👨🏻‍💻 Equipe 5: Jovens IBMers
 
-<table align="stretch">
-  <tr align="center">
-    <td align="center">
-      <a href="https://github.com/WhoisAndreoli">
-        <img src="https://avatars.githubusercontent.com/u/78062867?v=4" width="80px;" style="border-radius: 50%;" alt="Foto do Andre Silva"/><br>
-        <sub>
-          <b>Andre Silva</b>
-        </sub>
-      </a>
-    </td>
-    </tr>
-    
+<div align="center">
+<table>
   <tr>
-    <td align="center">
+    <td align="center"><img style="width: 150px; border-radius: 50%" 
+    src=""https://avatars.githubusercontent.com/u/78062867?v=4"
+     alt="Andre Silva"/><br /><sub style="font-size: 14px"><b>Andre Silva</b></sub><br /> 
+    <a href="https://github.com/WhoisAndreoli" alt="Github">
+    <br>
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" style= "width:90px;"/>
     </a>
-      <a href="https://github.com/carlostsa10">
-        <img src="https://avatars.githubusercontent.com/u/92460525?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Carlos Tavares"/><br>
-        <sub>
-          <b>Carlos Tavares</b>
-        </sub>
-     </td>
-      </tr>
-      
-  <tr align="center">
-    <td align="center">
-      <a href="https://github.com/evaldovisk">
-        <img src="https://avatars.githubusercontent.com/u/86272926?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Evaldo Fonseca"/><br>
-        <sub>
-          <b>Evaldo Fonseca</b>
-        </sub>
-      </a>
     </td>
-    </tr>
     
- <tr align="center">
-    <td align="center">
-      <a href="https://github.com/TCLxEdu17">
-        <img src="https://avatars.githubusercontent.com/u/102531994?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Luis Eduardo"/><br>
-        <sub>
-          <b>Luis Eduardo</b>
-        </sub>
-      </a>
+    <td align="center"><img style="width: 150px; border-radius: 50%" 
+    src="https://avatars.githubusercontent.com/u/92460525?v=4"
+     alt="Carlos Tavares"/><br /><sub style="font-size: 14px"><b>Carlos Tavares</b></sub><br /> 
+    <a href="https://github.com/carlostsa10" alt="Github">
+    <br>
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" style= "width:90px;"/>
+    </a>
     </td>
-    </tr>
- <tr align="center">
-    <td align="center">
-      <a href="https://github.com/jsuisjuan">
-        <img src="https://avatars.githubusercontent.com/u/72449972?v=4" width="80px;" style="border-radius: 50%" alt="Foto do Juan Carvalho"/><br>
-        <sub>
-          <b>Juan Carvalho</b>
-        </sub>
-      </a>
-    </td>
-    </tr>
-    
- <tr align="center">
-    <td align="center">
-      <a href="https://github.com/ManueleLima">
-        <img src="https://avatars.githubusercontent.com/u/103943543?v=4" width="80px;" style="border-radius: 50%" alt="Foto da Maria Manuele"/><br>
-        <sub>
-          <b>Maria Manuele</b>
-        </sub>
-      </a>
-    </td>
-    </tr>
 
+    <td align="center"><img style="width: 150px; border-radius: 50%" 
+    src="https://avatars.githubusercontent.com/u/86272926?v=4"
+     alt="Evaldo Fonseca"/><br /><sub style="font-size: 14px"><b>Evaldo Fonseca</b></sub><br /> 
+    <a href="https://github.com/evaldovisk" alt="Github">
+    <br>
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" style= "width:90px;"/>
+    </a>
+    </td>
+    
+    
+    <td align="center"><img style="width: 150px; border-radius: 50%" 
+    src="https://avatars.githubusercontent.com/u/102531994?v=4"
+     alt="Luis Eduardo"/><br /><sub style="font-size: 14px"><b>Luis Eduardo</b></sub><br /> 
+    <a href="https://github.com/TCLxEdu17" alt="Github">
+    <br>
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" style= "width:90px;"/>
+    </a>
+    </td>
+    
+    <td align="center"><img style="width: 150px; border-radius: 50%" 
+    src="https://avatars.githubusercontent.com/u/72449972?v=4"
+     alt="Juan Carvalho"/><br /><sub style="font-size: 14px"><b>Juan Carvalho</b></sub><br /> 
+    <a href="https://github.com/jsuisjuan" alt="Github">
+    <br>
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" style= "width:90px;"/>
+    </a>
+    </td>
+    
+    <td align="center"><img style="width: 150px; border-radius: 50%" 
+    src="https://avatars.githubusercontent.com/u/103943543?v=4"
+     alt="Maria Manuele"/><br /><sub style="font-size: 14px"><b>Maria Manuele</b></sub><br /> 
+    <a href="https://github.com/ManueleLima" alt="Github">
+    <br>
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" style= "width:90px;"/>
+    </a>
+    </td>
+  
+  </tr>
+</table>
+</div>
+      
+    
