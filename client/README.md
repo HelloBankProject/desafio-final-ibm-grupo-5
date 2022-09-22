@@ -1,4 +1,7 @@
 # Hello Bank 
+Este é o seu banco inteligente.
+
+<img alt="Imagem inicial do HelloBank" src="https://uploaddeimagens.com.br/imagens/m3ZR-0U" />
 
 ### 😎 Contribuição
 
